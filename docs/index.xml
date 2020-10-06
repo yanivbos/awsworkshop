@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JFrog Modernization Workshops on JFrog Workshop</title>
+    <link>https://jefferyfry.github.io/awsworkshop/</link>
+    <description>Recent content in JFrog Modernization Workshops on JFrog Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="https://jefferyfry.github.io/awsworkshop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a JFrog account</title>
+      <link>https://jefferyfry.github.io/awsworkshop/10_prerequisites/10_jfrog_platform_account.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/10_prerequisites/10_jfrog_platform_account.html</guid>
+      <description> If you already have a JFrog account, you can skip this page.
+  If you don&amp;rsquo;t already have an AWS account with Administrator access: create one now
+ Once you have an AWS account, ensure you are following the remaining workshop steps as an IAM user with administrator access to the AWS account: Create a new IAM user to use for the workshop
+ Enter the user details:  Attach the AdministratorAccess IAM Policy:  Click to create the new user:  Take note of the login URL and save:   </description>
+    </item>
+    
+    <item>
+      <title>Create an AWS account</title>
+      <link>https://jefferyfry.github.io/awsworkshop/10_prerequisites/1_aws_account.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/10_prerequisites/1_aws_account.html</guid>
+      <description>Your account must have the ability to create new IAM roles and scope other IAM permissions.
+ If you already have an AWS account, and have IAM Administrator access, you can skip this page.
+  If you don&amp;rsquo;t already have an AWS account with Administrator access: create one now
+ Once you have an AWS account, ensure you are following the remaining workshop steps as an IAM user with administrator access to the AWS account: Create a new IAM user to use for the workshop</description>
+    </item>
+    
+    <item>
+      <title>Artifactory</title>
+      <link>https://jefferyfry.github.io/awsworkshop/20_getting_started/20_artifactory.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/20_getting_started/20_artifactory.html</guid>
+      <description>Now we are going to populate the JFrog Platform with the tutorial. Please fork the following JFrog Tutorial GitHub project.
+ Login into Artifactory.
+ Go into Pipelines -&amp;gt; Integrations.
+ Click &amp;ldquo;Add an Integration&amp;rdquo;.
+ Select &amp;ldquo;Artifactory&amp;rdquo; as the integration type and name it: Artifactory.
+ Provide your Artifactory URL and your Credentials.
+ Add another Pipelines integration:
+ Integration type: GitHub, name: GitHub.
+ Provide your GitHub personal access token (follow these instructions for the creation of the token).</description>
+    </item>
+    
+    <item>
+      <title>Cloud9</title>
+      <link>https://jefferyfry.github.io/awsworkshop/20_getting_started/1_cloud9.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/20_getting_started/1_cloud9.html</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,64 @@
+[
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/10_prerequisites/10_jfrog_platform_account.html",
+	"title": "Create a JFrog account",
+	"tags": [],
+	"description": "",
+	"content": " If you already have a JFrog account, you can skip this page.\n  If you don\u0026rsquo;t already have an AWS account with Administrator access: create one now\n Once you have an AWS account, ensure you are following the remaining workshop steps as an IAM user with administrator access to the AWS account: Create a new IAM user to use for the workshop\n Enter the user details:  Attach the AdministratorAccess IAM Policy:  Click to create the new user:  Take note of the login URL and save:   "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/10_prerequisites/1_aws_account.html",
+	"title": "Create an AWS account",
+	"tags": [],
+	"description": "",
+	"content": " Your account must have the ability to create new IAM roles and scope other IAM permissions.\n If you already have an AWS account, and have IAM Administrator access, you can skip this page.\n  If you don\u0026rsquo;t already have an AWS account with Administrator access: create one now\n Once you have an AWS account, ensure you are following the remaining workshop steps as an IAM user with administrator access to the AWS account: Create a new IAM user to use for the workshop\n Enter the user details:  Attach the AdministratorAccess IAM Policy:  Click to create the new user:  Take note of the login URL and save:   "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/",
+	"title": "JFrog Modernization Workshops",
+	"tags": [],
+	"description": "",
+	"content": " JFrog Modernization Workshop Welcome In this workshop you will learn about the JFrog Platform and how to leverage Artifactory, XRay and JFrog Pipelines for improving your Software Development Lifecycle (SDLC).\nLearning Objectives  Understand the roles of Artifactory, XRay and JFrog Pipelines in your SDLC. Use Local, Remote and Virtual Repositories in Artifactory. Publish and promote Build Info. Scan your artifacts and builds for security vulnerabilities.  The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.  "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/20_getting_started/20_artifactory.html",
+	"title": "Artifactory",
+	"tags": [],
+	"description": "",
+	"content": " Now we are going to populate the JFrog Platform with the tutorial. Please fork the following JFrog Tutorial GitHub project.\n Login into Artifactory.\n Go into Pipelines -\u0026gt; Integrations.\n Click \u0026ldquo;Add an Integration\u0026rdquo;.\n Select \u0026ldquo;Artifactory\u0026rdquo; as the integration type and name it: Artifactory.\n Provide your Artifactory URL and your Credentials.\n Add another Pipelines integration:\n Integration type: GitHub, name: GitHub.\n Provide your GitHub personal access token (follow these instructions for the creation of the token).\n Go to Pipelines -\u0026gt; Pipeline Sources.\n Click Add Pipeline Source.\n Select Single Branch.\n Select the integration named: GitHub.\n Enter the repository you\u0026rsquo;ve forked the project into (in the pre-requisites step).\n In \u0026ldquo;Pipeline Config File Filter\u0026rdquo; enter pipelines/base_.*yml\n Go to Pipelines -\u0026gt; My Pipelines.\n Select the init_environment pipeline.\n Click on the \u0026ldquo;Create_scaffholding\u0026rdquo; step.\n Click the \u0026ldquo;trigger this step\u0026rdquo; icon.\n  Wait for the Run to finish before moving to the next chapter. When this run finishes, your tutorial environment is ready to be used.\n "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/20_getting_started/1_cloud9.html",
+	"title": "Cloud9",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/10_prerequisites.html",
+	"title": "Prerequisites",
+	"tags": [],
+	"description": "",
+	"content": " Prerequisites  Create a JFrog account   Create an AWS account   "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/20_getting_started.html",
+	"title": "Getting Started",
+	"tags": [],
+	"description": "",
+	"content": " Getting Started  Artifactory   Cloud9   "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/categories.html",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/tags.html",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

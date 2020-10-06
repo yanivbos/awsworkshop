@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://jefferyfry.github.io/awsworkshop/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
@@ -9,6 +9,10 @@ defaultContentLanguageInSubdir= "true"
 uglyurls = "true"
 enableEmoji = true
 sectionPagesMenu = "main"
+
+# for github pages https://github.com/gohugoio/hugo/issues/7714
+publishDir = "docs"
+canonifyurls = true
 
 [params]
   # Prefix URL to edit current page. Will display an "Edit this page" button on top right hand corner of every page. 

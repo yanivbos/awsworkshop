@@ -1,5 +1,5 @@
 ---
-title: "JFrog Modernization Workshop"
+title: "JFrog Modernization Workshops"
 chapter: true
 weight: 1
 ---
@@ -18,6 +18,6 @@ In this workshop you will learn about the JFrog Platform and how to leverage Art
 
 {{% notice warning %}}
 <p style='text-align: left;'>
-The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various AWS services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.
+The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.
 </p>
 {{% /notice %}}
