@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps in the Cloud on JFrog Workshop</title>
+    <link>https://jefferyfry.github.io/awsworkshop/50_devops_cloud.html</link>
+    <description>Recent content in DevOps in the Cloud on JFrog Workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language><atom:link href="https://jefferyfry.github.io/awsworkshop/50_devops_cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Continuous Integration and Delivery</title>
+      <link>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/1_continuous_integration_and_delivery.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/1_continuous_integration_and_delivery.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary Repository Management</title>
+      <link>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/10_binary_repository_management.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/10_binary_repository_management.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DevSecOps</title>
+      <link>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/20_dev_sec_ops.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/20_dev_sec_ops.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unified Platform</title>
+      <link>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/30_unified_solution.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/30_unified_solution.html</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

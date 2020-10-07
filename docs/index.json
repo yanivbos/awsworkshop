@@ -1,52 +1,129 @@
 [
 {
-	"uri": "https://jefferyfry.github.io/awsworkshop/10_prerequisites/10_jfrog_platform_account.html",
-	"title": "Create a JFrog account",
-	"tags": [],
-	"description": "",
-	"content": " If you already have a JFrog account, you can skip this page.\n  If you don\u0026rsquo;t already have an AWS account with Administrator access: create one now\n Once you have an AWS account, ensure you are following the remaining workshop steps as an IAM user with administrator access to the AWS account: Create a new IAM user to use for the workshop\n Enter the user details:  Attach the AdministratorAccess IAM Policy:  Click to create the new user:  Take note of the login URL and save:   "
-},
-{
-	"uri": "https://jefferyfry.github.io/awsworkshop/10_prerequisites/1_aws_account.html",
-	"title": "Create an AWS account",
-	"tags": [],
-	"description": "",
-	"content": " Your account must have the ability to create new IAM roles and scope other IAM permissions.\n If you already have an AWS account, and have IAM Administrator access, you can skip this page.\n  If you don\u0026rsquo;t already have an AWS account with Administrator access: create one now\n Once you have an AWS account, ensure you are following the remaining workshop steps as an IAM user with administrator access to the AWS account: Create a new IAM user to use for the workshop\n Enter the user details:  Attach the AdministratorAccess IAM Policy:  Click to create the new user:  Take note of the login URL and save:   "
-},
-{
-	"uri": "https://jefferyfry.github.io/awsworkshop/",
-	"title": "JFrog Modernization Workshops",
-	"tags": [],
-	"description": "",
-	"content": " JFrog Modernization Workshop Welcome In this workshop you will learn about the JFrog Platform and how to leverage Artifactory, XRay and JFrog Pipelines for improving your Software Development Lifecycle (SDLC).\nLearning Objectives  Understand the roles of Artifactory, XRay and JFrog Pipelines in your SDLC. Use Local, Remote and Virtual Repositories in Artifactory. Publish and promote Build Info. Scan your artifacts and builds for security vulnerabilities.  The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.  "
-},
-{
-	"uri": "https://jefferyfry.github.io/awsworkshop/20_getting_started/20_artifactory.html",
-	"title": "Artifactory",
-	"tags": [],
-	"description": "",
-	"content": " Now we are going to populate the JFrog Platform with the tutorial. Please fork the following JFrog Tutorial GitHub project.\n Login into Artifactory.\n Go into Pipelines -\u0026gt; Integrations.\n Click \u0026ldquo;Add an Integration\u0026rdquo;.\n Select \u0026ldquo;Artifactory\u0026rdquo; as the integration type and name it: Artifactory.\n Provide your Artifactory URL and your Credentials.\n Add another Pipelines integration:\n Integration type: GitHub, name: GitHub.\n Provide your GitHub personal access token (follow these instructions for the creation of the token).\n Go to Pipelines -\u0026gt; Pipeline Sources.\n Click Add Pipeline Source.\n Select Single Branch.\n Select the integration named: GitHub.\n Enter the repository you\u0026rsquo;ve forked the project into (in the pre-requisites step).\n In \u0026ldquo;Pipeline Config File Filter\u0026rdquo; enter pipelines/base_.*yml\n Go to Pipelines -\u0026gt; My Pipelines.\n Select the init_environment pipeline.\n Click on the \u0026ldquo;Create_scaffholding\u0026rdquo; step.\n Click the \u0026ldquo;trigger this step\u0026rdquo; icon.\n  Wait for the Run to finish before moving to the next chapter. When this run finishes, your tutorial environment is ready to be used.\n "
-},
-{
-	"uri": "https://jefferyfry.github.io/awsworkshop/20_getting_started/1_cloud9.html",
-	"title": "Cloud9",
+	"uri": "https://jefferyfry.github.io/awsworkshop/50_devops_cloud/1_continuous_integration_and_delivery.html",
+	"title": "Continuous Integration and Delivery",
 	"tags": [],
 	"description": "",
 	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/1_fork_workshop_repos.html",
+	"title": "Fork the Lab Repositories",
+	"tags": [],
+	"description": "",
+	"content": "To get started, you will need to fork two GitHub repositories. These repositories contain the files that are needed for the lab.\n https://github.com/shimib/Horae\n https://github.com/shimib/project-examples\n   Navigate to each of these repositories and fork them to your account. In the top-right corner of the GitHub repository page, click Fork. Do this for both repositories. In your terminal, clone each of the new forks to your local git directory.\n$ git clone https://github.com/\u0026lt;username\u0026gt;/Horae.git$ https://github.com/\u0026lt;username\u0026gt;/project-examples  In the next sections, you will make changes to the files in these repositories.\n"
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/",
+	"title": "JFrog Modernization Workshop",
+	"tags": [],
+	"description": "",
+	"content": " JFrog Modernization Workshop {{ $img := resources.Get \u0026ldquo;images/Jfrog-Logo.svg\u0026rdquo; }} {{ with $img }} {{ end }}\nWelcome In this workshop you will learn about the JFrog Platform and how to leverage Artifactory, XRay and JFrog Pipelines for improving your Software Development Lifecycle (SDLC).\nLearning Objectives  Understand the roles of Artifactory, XRay and JFrog Pipelines in your SDLC. Use Local, Remote and Virtual Repositories in Artifactory. Publish and promote Build Info. Scan your artifacts and builds for security vulnerabilities.  The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.  "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/50_devops_cloud/10_binary_repository_management.html",
+	"title": "Binary Repository Management",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/10_configure_github_integration.html",
+	"title": "Configure the GitHub Integration",
+	"tags": [],
+	"description": "",
+	"content": "In order for JFrog Pipelines, to get access to the code in your new repositories, we must first set up a Pipelines GitHub integration. This allows Pipelines to authenticate and get access to your GitHub repositories. To do this, we create a GitHub Personal Access Token with the correct permissions.\n Go to your GitHub Personal Access Tokens settings page. Click on Generate new token. Provide a name for the token. Configure the token for the following scopes.\n* repo (all) * admin:repo_hook (read, write) * admin:public_key (read, write) Click Generate token.\n Copy the token.\n Go to your JFrog Platform instance at https://\u0026lt;servername\u0026gt;.jfrog.io.\n Login to your JFrog Platform instance with your credentials.  Once logged into the environment, you will be presented with the landing page.  On the left sidebar menu, select Pipelines ► Integrations.  Click on Add an Integration.\n Give this integration a name like MyGitHub.\n For the Integration Type, choose GitHub.\n Paste your GitHub Personal Access Token into the Token field.  Click Create.\n  You have created a GitHub Integration that allows JFrog Pipelines to access your GitHub repositories.\n"
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/10_prerequisites.html",
 	"title": "Prerequisites",
 	"tags": [],
 	"description": "",
-	"content": " Prerequisites  Create a JFrog account   Create an AWS account   "
+	"content": " Prerequisites Please set up these items before beginning.\n Access to a JFrog Platform instance with Artifactory, Xray and Pipelines - Get your own JFrog Platform instance with the JFrog Platform Cloud Free Tier in just a few minutes. A GitHub account for accessing and modifying workshop code - Create a GitHub account with these official instructions.  "
 },
 {
-	"uri": "https://jefferyfry.github.io/awsworkshop/20_getting_started.html",
-	"title": "Getting Started",
+	"uri": "https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/20_configure_artifactory_integration.html",
+	"title": "Configure the Artifactory Integration",
 	"tags": [],
 	"description": "",
-	"content": " Getting Started  Artifactory   Cloud9   "
+	"content": "Similar to the GitHub Integration, in the following steps you will configure an Artifactory Integration that allows JFrog Pipelines to also access your Artifactory repositories in order to publish your artifacts and build info. You will do this by creating an API key.\n In your JFrog Platform instance, go your profile and select Edit Profile. Enter your password and click Unlock to edit the profile. In the Authentication Settings section, click the gear icon to generate an API key.  Copy the API key. Go back to Integrations, select Pipelines ► Integrations.  Click on Add an Integration. Give this integration a name like MyArtifactory. For the Integration Type, choose Artifactory. Enter your JFrog Platform instance URL for the url. Enter your username for the User. Paste your Artifactory API Key into the API Key field.  Click Create.  You have created an Artifactory Integration that allows JFrog Pipelines to access your Artifactory repositories.\n"
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/50_devops_cloud/20_dev_sec_ops.html",
+	"title": "DevSecOps",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/30_configure_initialization_pipeline.html",
+	"title": "Configure the Initialization Pipeline",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/50_devops_cloud/30_unified_solution.html",
+	"title": "Unified Platform",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/40_configure_pipeline_source.html",
+	"title": "Configure the Pipeline Source",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/50_devops_cloud.html",
+	"title": "DevOps in the Cloud",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/50_execute_initialization_pipeline.html",
+	"title": "Execute the Initialization Pipeline",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/60_execute_gradle_build_pipeline.html",
+	"title": "Execute the Gradle Build Pipeline",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/70_execute_npm_build_pipeline.html",
+	"title": "Execute the NPM Build Pipeline",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/60_jfrog_platform_overview.html",
+	"title": "JFrog Platform Overview",
+	"tags": [],
+	"description": "",
+	"content": "The JFrog Platform is designed to meet the growing needs of companies to develop and distribute software. It provides DevOps with the tools needed to create, manage and deploy software with ease. These tools cover everything from binary management, artifact maturity, security and vulnerability protection, CI/CD orchestration, release management, analytics and distribution.\nJFrog Artifactory is an Artifact Repository Manager that fully supports software packages created by any language or technology. Furthermore, it integrates with all major CI/CD and DevOps tools to provide an end-to-end, automated solution for tracking artifacts from development to production.\nJFrog Xray provides universal artifact analysis, increasing visibility and performance of your software components by recursively scanning all layers of your organization’s binary packages to provide radical transparency and unparalleled insight into your software architecture.\nJFrog Distribution empowers DevOps to distribute and continuously update remote locations with release-ready binaries.\nJFrog Artifactory Edge accelerates and provides control of release-ready binary distribution through a secure distributed network and edge nodes.\nJFrog Mission Control and Insight is your DevOps dashboard solution for managing multiple services of Artifactory, Xray, Edge and Distribution.\nJFrog Access with Federation provides governance to the distribution of artifacts by managing releases, permissions and access levels.\nJFrog Pipelines helps automate the non-human part of the whole software development process with continuous integration and empowers teams to implement the technical aspects of continuous delivery.\n "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab.html",
+	"title": "JFrog Devops Hands-On Lab",
+	"tags": [],
+	"description": "",
+	"content": "In this tutorial we’ll build a containerized microservice with an example Java and NPM two-tier web application which requires third party dependencies and Docker images used for deployment. The Pipelines provided in this tutorial include two pre-configured pipelines that will provide you the experience in building and publishing a multi-stage web application.\n gradle-build creates a Java web app which displays some images.\n npm-build builds a NPM user interface that connects to the Java web app.\n  Throughout all of the CI/CD pipelines, all artifacts are pushed to Artifactory. Artifacts in Artifactory are annotated with metadata, especially in the case of builds which come with exhaustive metadata facilitating full traceability. This, for example, prevents the deletion of dependencies which are needed by a build. We’ll see this later on in the tutorial when we use the Tree Browser in Artifactory to view one of the artifacts produced in our build.  "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/999_additional_resources.html",
+	"title": "Additional Resources",
+	"tags": [],
+	"description": "",
+	"content": " JFrog Platform Documentation - The full documentation of the JFrog Platform, the universal, hybrid, end-to-end DevOps automation solution. It is designed to take you through all of the JFrog Products. Including user, administration and developer guides, installation and upgrade procedures, system architecture and configuration, and working with the JFrog application. JFrog Academy - Learn more about the JFrog Platform at your own pace with JFrog Academy free courses taught by our experts.  "
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/categories.html",

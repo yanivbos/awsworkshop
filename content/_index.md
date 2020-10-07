@@ -1,17 +1,18 @@
 ---
-title: "JFrog Modernization Workshops"
+title: "JFrog Modernization Workshop"
 chapter: true
 weight: 1
 ---
 
+![JFrog Logo](/images/jfrog-logo.png) 
 # JFrog Modernization Workshop
 
 ### Welcome
 
-In this workshop you will learn about the JFrog Platform and how to leverage Artifactory, XRay and JFrog Pipelines for improving your Software Development Lifecycle (SDLC).
+In this workshop you will learn about the JFrog Platform and how to leverage Artifactory, XRay and Pipelines for managing your Software Development Lifecycle (SDLC) in the cloud on AWS.
 
 ### Learning Objectives
-- Understand the roles of Artifactory, XRay and JFrog Pipelines in your SDLC.
+- Understand the roles of Artifactory, XRay and Pipelines in your software delivery life cycle (SDLC).
 - Use Local, Remote and Virtual Repositories in Artifactory.
 - Publish and promote Build Info.
 - Scan your artifacts and builds for security vulnerabilities.

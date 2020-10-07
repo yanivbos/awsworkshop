@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://jefferyfry.github.io/awsworkshop/images/favicon.png" type="image/png">
 
-    <title>Prerequisites :: JFrog Workshop</title>
+    <title>JFrog Devops Hands-On Lab :: JFrog Workshop</title>
 
     
     <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602047539" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="https://jefferyfry.github.io/awsworkshop/10_prerequisites.html">
+  <body class="" data-url="https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -79,8 +79,8 @@
   
     
     <li data-nav-id="/10_prerequisites.html" title="Prerequisites" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jefferyfry.github.io/awsworkshop/10_prerequisites.html">
@@ -251,8 +251,8 @@
   
     
     <li data-nav-id="/70_jfrog_devops_hands-on_lab.html" title="JFrog Devops Hands-On Lab" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab.html">
@@ -530,7 +530,7 @@
             
           
           
-            <a href='https://jefferyfry.github.io/awsworkshop/'>JFrog Modernization Workshop</a> > Prerequisites
+            <a href='https://jefferyfry.github.io/awsworkshop/'>JFrog Modernization Workshop</a> > JFrog Devops Hands-On Lab
           
         
           
@@ -541,11 +541,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li><a href="#prerequisites">Prerequisites</a></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -561,7 +557,7 @@
           
             <h1>
               
-              Prerequisites
+              JFrog Devops Hands-On Lab
             </h1>
           
 
@@ -569,16 +565,21 @@
 
 
 
-	
+	<p>In this tutorial we’ll build a containerized microservice with an example Java and NPM two-tier web application which requires third party dependencies and Docker images used for deployment.
+The Pipelines provided in this tutorial include two pre-configured pipelines that will provide you the experience in building and publishing a multi-stage web application.</p>
 
-<h1 id="prerequisites">Prerequisites</h1>
+<ol>
+<li><p><strong>gradle-build</strong> creates a Java web app which displays some images.</p></li>
 
-<p>Please set up these items before beginning.</p>
+<li><p><strong>npm-build builds</strong> a NPM user interface that connects to the Java web app.</p></li>
+</ol>
 
-<ul>
-<li>Access to a JFrog Platform instance with Artifactory, Xray and Pipelines - Get your own JFrog Platform instance with the <a href="https://jfrog.com/artifactory/start-free/" target="_blank">JFrog Platform Cloud Free Tier</a> in just a few minutes.</li>
-<li>A GitHub account for accessing and modifying workshop code - Create a GitHub account with these official <a href="https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/signing-up-for-a-new-github-account" target="_blank">instructions</a>.</li>
-</ul>
+
+<div class="notices info" ><p style='text-align: left;'>
+Throughout all of the CI/CD pipelines, all artifacts are pushed to Artifactory. Artifacts in Artifactory are annotated with metadata, especially in the case of builds which come with exhaustive metadata facilitating full traceability. This, for example, prevents the deletion of dependencies which are needed by a build. We’ll see this later on in the tutorial when we use the Tree Browser in Artifactory to view one of the artifacts produced in our build.
+</p>
+</div>
+
 
 
 
@@ -619,6 +620,8 @@
             
                 
                     
+                        
+                        
                     
                 
                 
@@ -636,9 +639,6 @@
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -646,22 +646,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -711,6 +695,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -735,6 +735,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -747,6 +748,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -899,10 +903,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jefferyfry.github.io/awsworkshop/" title="JFrog Modernization Workshop"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jefferyfry.github.io/awsworkshop/60_jfrog_platform_overview.html" title="JFrog Platform Overview"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/50_devops_cloud.html" title="DevOps in the Cloud" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/1_fork_workshop_repos.html" title="Fork the Lab Repositories" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

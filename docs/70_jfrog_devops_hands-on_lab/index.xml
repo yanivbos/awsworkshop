@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JFrog Modernization Workshop on JFrog Workshop</title>
-    <link>https://jefferyfry.github.io/awsworkshop/</link>
-    <description>Recent content in JFrog Modernization Workshop on JFrog Workshop</description>
+    <title>JFrog Devops Hands-On Lab on JFrog Workshop</title>
+    <link>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab.html</link>
+    <description>Recent content in JFrog Devops Hands-On Lab on JFrog Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language><atom:link href="https://jefferyfry.github.io/awsworkshop/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Continuous Integration and Delivery</title>
-      <link>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/1_continuous_integration_and_delivery.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/1_continuous_integration_and_delivery.html</guid>
-      <description></description>
-    </item>
-    
+    <language>en-US</language><atom:link href="https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fork the Lab Repositories</title>
       <link>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/1_fork_workshop_repos.html</link>
@@ -25,15 +16,6 @@
  https://github.com/shimib/Horae
  https://github.com/shimib/project-examples
    Navigate to each of these repositories and fork them to your account. In the top-right corner of the GitHub repository page, click Fork. Do this for both repositories. In your terminal, clone each of the new forks to your local git directory.</description>
-    </item>
-    
-    <item>
-      <title>Binary Repository Management</title>
-      <link>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/10_binary_repository_management.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/10_binary_repository_management.html</guid>
-      <description></description>
     </item>
     
     <item>
@@ -57,29 +39,11 @@
     </item>
     
     <item>
-      <title>DevSecOps</title>
-      <link>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/20_dev_sec_ops.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/20_dev_sec_ops.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Configure the Initialization Pipeline</title>
       <link>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/30_configure_initialization_pipeline.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/30_configure_initialization_pipeline.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Unified Platform</title>
-      <link>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/30_unified_solution.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/30_unified_solution.html</guid>
       <description></description>
     </item>
     
