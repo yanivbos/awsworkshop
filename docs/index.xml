@@ -100,7 +100,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/50_execute_initialization_pipeline.html</guid>
-      <description></description>
+      <description>The first pipeline that we will execute is the environment initialization pipeline. This pipeline will create users, groups, permissions, repositories, Xray policies and watches, Xray indexes and access federation. This prepares our JFrog Platform instance to run our gradle and npm build pipelines.
+ Go to Pipelines ► My Pipelines.  Click on the init_environment pipeline in the Pipelines List. Click on the first step and further click on the trigger step icon to execute this pipeline.</description>
     </item>
     
     <item>

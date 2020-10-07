@@ -15,7 +15,7 @@ Similar to the GitHub Integration, in the following steps you will configure an 
 6. Click on **Add an Integration**.
 7. Give this integration the name _Artifactory_.
 8. For the **Integration Type**, choose **Artifactory**.
-9. Enter your JFrog Platform instance URL for the **url**.
+9. Enter your JFrog Platform instance URL _https://[server name].jfrog.io/artifactory_ for the **url**.
 10. Enter your username for the **User**.
 11. Paste your Artifactory API Key into the **API Key** field.
 ![Artifactory Integration](/images/AddArtifactoryIntegration.png)

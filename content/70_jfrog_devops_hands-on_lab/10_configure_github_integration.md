@@ -18,7 +18,7 @@ In order for JFrog Pipelines, to get access to the code in your new repositories
 ```
 5. Click **Generate token**.
 6. Copy the token.
-7. Go to your JFrog Platform instance at https://\<servername\>.jfrog.io.
+7. Go to your JFrog Platform instance at _https://[server name].jfrog.io_. Refer to your _JFrog Free Subscription Activation_ email if needed.
 8. Login to your JFrog Platform instance with your credentials.
 ![Login](/images/Login.png)
 9. Once logged into the environment, you will be presented with the landing page.
