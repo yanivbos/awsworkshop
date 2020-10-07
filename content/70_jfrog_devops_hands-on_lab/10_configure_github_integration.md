@@ -26,7 +26,7 @@ In order for JFrog Pipelines, to get access to the code in your new repositories
 10. On the left sidebar menu, select **Pipelines** ► **Integrations**.
 ![Pipelines](/images/Integrations.png)
 10. Click on **Add an Integration**.
-11. Give this integration a name like _MyGitHub_.
+11. Give this integration the name _GitHub_.
 12. For the **Integration Type**, choose **GitHub**.
 13. Paste your GitHub Personal Access Token into the **Token** field.
 ![GitHub Integration](/images/AddGitHubIntegration.png)

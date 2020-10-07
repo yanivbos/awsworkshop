@@ -13,9 +13,9 @@
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/1_fork_workshop_repos.html</guid>
       <description>To get started, you will need to fork two GitHub repositories. These repositories contain the files that are needed for the lab.
- https://github.com/shimib/Horae
- https://github.com/shimib/project-examples
-   Navigate to each of these repositories and fork them to your account. In the top-right corner of the GitHub repository page, click Fork. Do this for both repositories. In your terminal, clone each of the new forks to your local git directory.</description>
+ https://github.com/shimib/Horae - Contains our JFrog pipelines for configuring our Artifactory server and building our Java webapp and NPM user interface.
+ https://github.com/shimib/project-examples - Contains our webapp code which consists of the Java webapp and NPM user interface.
+   Navigate to each of these repositories GitHub using the links above and fork them to your account.</description>
     </item>
     
     <item>
@@ -44,7 +44,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/30_configure_initialization_pipeline.html</guid>
-      <description></description>
+      <description>Next, we will update the lab pipelines to add your new GitHub and Artifactory integrations. In previous steps, you forked and cloned the lab repositories. We will modify the initialization pipeline in your forked Horae repository to add these integrations.
+ In your local git directory, open Horae/pipelines/base_init.yml in an editor. Updated the resources section  </description>
     </item>
     
     <item>

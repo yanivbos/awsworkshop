@@ -13,7 +13,7 @@ Similar to the GitHub Integration, in the following steps you will configure an 
 5. Go back to **Integrations**, select **Pipelines** ► **Integrations**.
 ![Pipelines](/images/Integrations.png)
 6. Click on **Add an Integration**.
-7. Give this integration a name like _MyArtifactory_.
+7. Give this integration the name _Artifactory_.
 8. For the **Integration Type**, choose **Artifactory**.
 9. Enter your JFrog Platform instance URL for the **url**.
 10. Enter your username for the **User**.
@@ -21,6 +21,7 @@ Similar to the GitHub Integration, in the following steps you will configure an 
 ![Artifactory Integration](/images/AddArtifactoryIntegration.png)
 10. Click **Create**.
 
-You have created an Artifactory Integration that allows JFrog Pipelines to access your Artifactory repositories.
+You have created an Artifactory Integration that allows JFrog Pipelines to access your Artifactory repositories. At this point, you should see the Artifactory and the GitHub Integrations in the Integrations list.
 
+![Integrations List](/images/IntegrationsFinal.png)
 
