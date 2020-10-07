@@ -11,7 +11,7 @@
 	"title": "Fork the Lab Repositories",
 	"tags": [],
 	"description": "",
-	"content": "To get started, you will need to fork two GitHub repositories. These repositories contain the files that are needed for the lab.\n https://github.com/shimib/Horae - Contains our JFrog pipelines for configuring our Artifactory server and building our Java webapp and NPM user interface.\n https://github.com/shimib/project-examples - Contains our webapp code which consists of the Java webapp and NPM user interface.\n   Navigate to each of these repositories GitHub using the links above and fork them to your account. In the top-right corner of the GitHub repository page, click Fork. Do this for both repositories. In your terminal, clone each of the new forks to your local git directory.\n$ git clone https://github.com/\u0026lt;username\u0026gt;/Horae.git$ git clone https://github.com/\u0026lt;username\u0026gt;/project-examples  In the next sections, you will make changes to the files in these repositories.\n"
+	"content": "To get started, you will need to fork two GitHub repositories. These repositories contain the files that are needed for the lab.\n https://github.com/shimib/Horae - Contains our JFrog pipelines for configuring our Artifactory server and building our Java webapp and NPM user interface.\n https://github.com/shimib/project-examples - Contains our webapp code which consists of the Java webapp and NPM user interface.\n   Navigate to each of these repositories GitHub using the links above and fork them to your account. In the top-right corner of the GitHub repository page, click Fork. Do this for both repositories. In your terminal, clone each of the new forks to your local git directory.\n$ git clone https://github.com/[username]/Horae.git$ git clone https://github.com/[username]/project-examples  In the next sections, you will make changes to the files in these repositories.\n"
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/",
@@ -60,7 +60,7 @@
 	"title": "Configure the Initialization Pipeline",
 	"tags": [],
 	"description": "",
-	"content": "Next, we will update the lab pipelines to add your new GitHub and Artifactory integrations. In previous steps, you forked and cloned the lab repositories. We will modify the initialization pipeline in your forked Horae repository to add these integrations.\n In your local git directory, open Horae/pipelines/base_init.yml in an editor. Updated the resources section  "
+	"content": "Next, we will update the lab pipelines to add your new GitHub and Artifactory integrations. In previous steps, you forked and cloned the lab repositories. We will modify the initialization pipeline in your forked Horae repository to add these integrations.\n In your local git directory, open Horae/pipelines/base_init.yml in an editor. Update the resources section of the file to use your forked repositories. Change the path to use your username.\nresources: - name: demo_gitRepo type: GitRepo configuration: path: [your_Github_username]/Horae \u0026lt;\u0026lt;\u0026lt;--- CHANGE HERE gitProvider: GitHub - name: gitRepo_code type: GitRepo configuration: path: [your_Github_username]/project-examples \u0026lt;\u0026lt;\u0026lt;--- CHANGE HERE gitProvider: GitHub branches: include: eplus-v2-orbitera  Save your changes.\n In your terminal, git add, commit and push your changes.\n$ git add . $ git commit -m \u0026#39;Updated repository paths.\u0026#39; $ git push Go to https://github.com/[username]/Horae/blob/master/pipelines/base_init.yml and verify your changes were made and pushed to your GitHub repository.\n  We are now ready to add and execute your pipelines with JFrog Pipelines.\n"
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/50_devops_cloud/30_unified_solution.html",
@@ -74,7 +74,7 @@
 	"title": "Configure the Pipeline Source",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "In these next steps, we will add the previous pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to executes these pipelines automatically whenever there is a commit or manually as needed.\n In your JFrog Platform instance, go to Pipelines ► Pipeline Sources.  Click on Add Pipeline Source. Choose Single Branch. This is for repositories that only have one branch like master. For the Integration choose the GitHub Integration that you created previously named GitHub. For the Repository Full Name, specify your Horae repository name in the form [username]/Horae. Leave the Branch as master. For the Pipeline Config Filter, specify _pipelines/base_.*yml. Click Create.   It will take a few moments for JFrog Pipelines to sync the pipelines from your new Pipelines Source. During this time, JFrog Pipelines will load and process the pipelines for syntax, resources and dependencies. When complete, you should see a Success status. 9. Click on Logs on the left to view more details on the sync process. With your pipelines added, we are now ready to execute the pipelines, initialize our platform and build our artifacts!\n"
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/50_devops_cloud.html",
