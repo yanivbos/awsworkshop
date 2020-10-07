@@ -22,4 +22,8 @@ The JFrog Platform is designed to meet the growing needs of companies to develop
 
 **JFrog Pipelines** helps automate the non-human part of the whole software development process with continuous integration and empowers teams to implement the technical aspects of continuous delivery.
 
+All of these JFrog Platform components are designed and developed to work together out-of-the-box with minimal configuration. Management and monitoring of your software delivery lifecycle from build to distribution is accessible though a central, unified user interface. The JFrog platform is enterprise ready with choice of on-prem, cloud, multi-cloud or hybrid deployments that scale as you grow.
+
+![Platform UI](/images/platform-ui.png)
+
 {{% children showhidden="false" %}}
