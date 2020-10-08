@@ -12,21 +12,21 @@
     <title>Execute the Gradle Build Pipeline :: JFrog Workshop</title>
 
     
-    <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602100638" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/fontawesome-all.min.css?1602100638" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/hybrid.css?1602100638" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/featherlight.min.css?1602100638" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/perfect-scrollbar.min.css?1602100638" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/auto-complete.css?1602100638" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/atom-one-dark-reasonable.css?1602100638" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/theme.css?1602100638" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/hugo-theme.css?1602100638" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/fontawesome-all.min.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/hybrid.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/featherlight.min.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/perfect-scrollbar.min.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/auto-complete.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/atom-one-dark-reasonable.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/theme.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/hugo-theme.css?1602130805" rel="stylesheet">
     
-    <link href="https://jefferyfry.github.io/awsworkshop/css/theme-mine.css?1602100638" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/theme-mine.css?1602130805" rel="stylesheet">
     
     
 
-    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery-3.3.1.min.js?1602100638"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery-3.3.1.min.js?1602130805"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/lunr.min.js?1602100638"></script>
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/auto-complete.js?1602100638"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/lunr.min.js?1602130805"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/auto-complete.js?1602130805"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jefferyfry.github.io\/awsworkshop\/";
     
 </script>
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/search.js?1602100638"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/search.js?1602130805"></script>
 
     
   </div>
@@ -570,6 +570,159 @@
         
 
 
+<p>Our first build pipeline is a Gradle pipeline that builds our Java web app. This pipeline uses a <a href="https://www.jfrog.com/confluence/display/JFROG/GradleBuild" target="_blank">GradleBuild</a> native pipeline step to compile and build the code. <a href="https://www.jfrog.com/confluence/display/JFROG/DockerBuild" target="_blank">DockerBuild</a> and <a href="https://www.jfrog.com/confluence/display/JFROG/DockerPush" target="_blank">DockerPush</a> native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the <a href="https://www.jfrog.com/confluence/display/JFROG/XrayScan" target="_blank">XrayScan</a> native step. Then it pushes the produced artifacts to the staging repository in Artifactory along with all build information by using the <a href="https://www.jfrog.com/confluence/display/JFROG/PromoteBuild" target="_blank">PromoteBuild</a> native step.</p>
+
+<p><img src="https://jefferyfry.github.io/awsworkshop/images/gradle-build-pipeline-steps.svg" alt="Gradle Build Steps" /></p>
+
+<ol>
+<li>Go to <strong>Pipelines</strong> ► <strong>My Pipelines</strong>.
+<img src="https://jefferyfry.github.io/awsworkshop/images/MyPipelinesFinal.png" alt="My Pipelines" /></li>
+<li>Click on the <strong>gradle_build</strong> pipeline in the <strong>Pipelines List</strong>.</li>
+<li>Click on the <strong>View YAML</strong> icon to the right to view the pipeline steps discussed above.
+<img src="https://jefferyfry.github.io/awsworkshop/images/gradle-build-yaml.png" alt="Gradle Build YAML" /></li>
+<li>Click on the <strong>Resources</strong> tab to view the details for all the resources that are used in our pipeline. We specify the relevant input and output resources such as Git repositories, build infos and file specs. These are referenced in our pipeline.</li>
+<li>Click on the <strong>Pipeline</strong> tab.</li>
+
+<li><p>View the first step, _gradle_bld<em>app</em>. This is the GradleBuild native step that executes Gradle to build our Java webapp. The following occurs in this step:</p>
+
+<ul>
+<li>We specify the Gradle command to execute, the source location, and the location for some configuration files.</li>
+<li>By using the <em>autoPublishBuildInfo</em> parameter, we ensure the build information will be kept in Artifactory.</li>
+
+<li><p>We specify our <em>gitRepo_code</em> GitRepo resource as an input resource, our <em>Artifactory</em> integration and <em>gradleBuildInfo</em> as an output resource.</p>
+<pre><code>- name: gradle_bld_app
+type: GradleBuild
+configuration:
+  runtime:
+    type: image
+    image:
+      custom:
+        # THe Docker image is used to support a java 8 image for the gradle build
+        name: docker.bintray.io/jfrog/pipelines-u18java
+        tag: &#34;8&#34;
+  gradleCommand:        clean artifactoryPublish -b build.gradle --stacktrace
+  sourceLocation:       tutorial/step1-create-gradle-app
+  configFileLocation:   .
+  configFileName:       jfrog-gradle.yml
+  autoPublishBuildInfo: true
+  inputResources:
+    - name:  gitRepo_code
+  integrations:
+    - name: Artifactory
+  outputResources:
+    - name: gradleBuildInfo</code></pre></li>
+</ul></li>
+
+<li><p>The second step, _Gradle_docker<em>build</em>, executes a docker build. It does the following:</p>
+
+<ul>
+<li>It will use the Docker file from the relevant location to generate the Docker image with a specific name and tag based on the value of the environment variables that were configured in the <em>onStart</em>.</li>
+<li>It will use the <em>gitRepo_code</em> GitRepo resource as an input resource to locate the Dockerfile.</li>
+<li>It will use the BuildInfo input resource from the previous step.</li>
+
+<li><p>It will also use an additional input resource for downloading the Gradle-created artifact into the workspace of the running step, to be used as part of the Docker build</p>
+<pre><code>- name: Gradle_docker_build
+type: DockerBuild
+configuration:
+  affinityGroup: dock1
+  dockerFileLocation: tutorial/step1-create-gradle-app
+  dockerFileName: Dockerfile
+  dockerImageName: ${Fullimagename}
+  dockerImageTag: ${Version}
+  inputSteps:
+    - name: gradle_bld_app
+  inputResources:
+    - name: gitRepo_code
+      trigger: false
+    - name: gradle_fileSpec
+      trigger: false
+    - name: gradleBuildInfo     
+      trigger: false
+  integrations:
+    - name: Artifactory
+execution:
+  onStart:
+  # export artifactory ip from internal build env var to tag the docker image
+    - export domain=$(echo ${int_Artifactory_url} | awk -F[/:] &#39;{print $4}&#39; )
+    - export Fullimagename=&#34;${domain}/docker-demo/gradle-app&#34;</code></pre></li>
+</ul></li>
+
+<li><p>The next step will push the Docker image to the target Docker repository in Artifactory.</p>
+<pre><code>  - name: Gradle_docker_push
+    type: DockerPush
+    configuration:
+      affinityGroup: dock1
+      targetRepository: docker-demo
+      autoPublishBuildInfo: true
+      integrations:
+        - name: Artifactory
+      inputSteps:
+        - name: Gradle_docker_build
+      outputResources:
+        - name: docker_gradleBuild_Info</code></pre></li>
+
+<li><p>The following step scan the docker image produced in the preceding step using Xray for security vulnerabilities and license compliance. By default, a failed Xray scan will result in a failure of the step and the pipeline.</p>
+<pre><code>  - name: Gradle_docker_scan
+    type: XrayScan
+    configuration:
+      inputResources:
+        - name: docker_gradleBuild_Info
+          trigger: true
+      outputResources:
+        - name: scanned_gradle_dockerBuild_Info </code></pre></li>
+
+<li><p>The last step will promote the build after passing the previous Xray scan.</p>
+<pre><code>  - name: gradle_docker_promote
+    type: PromoteBuild
+    configuration:
+      targetRepository:      docker-demo
+      includeDependencies:   true
+      status:                Passed
+      comment:               Artifact passed Xray Scan
+      copy:                  false
+      inputResources:
+        - name:    scanned_gradle_dockerBuild_Info
+          trigger: true
+      outputResources:
+        - name: final_docker_gradleBuild_Info</code></pre></li>
+
+<li><p>Click on the first step and further click on the trigger step icon to execute this pipeline. A run will appear and it will take a few moments for JFrog Pipelines to allocate resources to execute the pipeline. It will take several minutes for this pipeline to run (~10 minutes).
+<img src="https://jefferyfry.github.io/awsworkshop/images/TriggerGradlePipeline.png" alt="Tigger Gradle Pipeline" /></p></li>
+
+<li><p>Click on the active run to view the progress of the pipeline.
+<img src="https://jefferyfry.github.io/awsworkshop/images/gradle-build-runs.png" alt="Gradle Build Runs" /></p></li>
+
+<li><p>Use the pulldown to select the various steps and view the logs for each step.
+<img src="https://jefferyfry.github.io/awsworkshop/images/view-logs.png" alt="View logs" /></p></li>
+
+<li><p>When the run completes successfully, go to <strong>Artifactory</strong> ► <strong>Builds</strong> to view your Gradle build.
+<img src="https://jefferyfry.github.io/awsworkshop/images/gradle-build-build.png" alt="Gradle Build" /></p></li>
+
+<li><p>Click on <strong>gradle_build</strong>. This will show you a list of the last builds for your Gradle build.
+<img src="https://jefferyfry.github.io/awsworkshop/images/builds-gradle-build.png" alt="Build List" /></p></li>
+
+<li><p>Click on your last promoted build with a <strong>Status</strong> of <strong>Passed</strong>.
+<img src="https://jefferyfry.github.io/awsworkshop/images/published-modules.png" alt="Published Modules" /></p></li>
+
+<li><p>Click on any of the modules to view the module artifacts and dependencies.
+<img src="https://jefferyfry.github.io/awsworkshop/images/module-dependencies.png" alt="Module Dependencies" /></p></li>
+
+<li><p>For any artifact or dependency, click on the icon for <strong>Show In Tree</strong> to view it in the repository.
+<img src="https://jefferyfry.github.io/awsworkshop/images/show-in-tree.png" alt="Show in Tree" /></p></li>
+
+<li><p>Go back to the <strong>Build</strong> view <strong>Artifactory</strong> ► <strong>Builds</strong> and explore the other tabs.</p></li>
+
+<li><p>The <strong>Environment</strong> tab shows your system and environment variables.
+<img src="https://jefferyfry.github.io/awsworkshop/images/Environment.png" alt="Environment" /></p></li>
+
+<li><p>The <strong>Xray Data</strong> tab shows any security vulnerabilities and license compliance issues.
+<img src="https://jefferyfry.github.io/awsworkshop/images/xray-data.png" alt="Xray Data" /></p></li>
+
+<li><p>The <strong>Diff</strong> tab allows you to compare this build to previous builds and shows the differences.
+<img src="https://jefferyfry.github.io/awsworkshop/images/diff.png" alt="Diff" /></p></li>
+</ol>
+
+<p>This Gradle build pipeline provided an overview of a typical build and release process using Artifactory, Pipelines and Xray. You were able to execute a pipeline, monitor the progress and examine its results. Let&rsquo;s move on to the next pipeline to explore more features.</p>
 
 
 <footer class="footline">
@@ -903,19 +1056,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/clipboard.min.js?1602100638"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.min.js?1602100638"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.jquery.min.js?1602100638"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery.sticky.js?1602100638"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/featherlight.min.js?1602100638"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/highlight.pack.js?1602100638"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/clipboard.min.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.min.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.jquery.min.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery.sticky.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/featherlight.min.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/highlight.pack.js?1602130805"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/modernizr.custom-3.6.0.js?1602100638"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/learn.js?1602100638"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/hugo-learn.js?1602100638"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/modernizr.custom-3.6.0.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/learn.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/hugo-learn.js?1602130805"></script>
     
         
-            <script src="https://jefferyfry.github.io/awsworkshop/mermaid/mermaid.js?1602100638"></script>
+            <script src="https://jefferyfry.github.io/awsworkshop/mermaid/mermaid.js?1602130805"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

@@ -64,7 +64,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/50_execute_initialization_pipeline.html</guid>
-      <description>The first pipeline that we will execute is the environment initialization pipeline. This pipeline will create users, groups, permissions, repositories, Xray policies and watches, Xray indexes and access federation. This prepares our JFrog Platform instance to run our gradle and npm build pipelines.
+      <description>The first pipeline that we will execute will initialize our environment. This pipeline will create users, groups, permissions, repositories, Xray policies and watches, Xray indexes and access federation. This prepares our JFrog Platform instance to run our gradle and npm build pipelines.
  Go to Pipelines ► My Pipelines.  Click on the init_environment pipeline in the Pipelines List. Click on the first step and further click on the trigger step icon to execute this pipeline.</description>
     </item>
     
@@ -74,7 +74,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/60_execute_gradle_build_pipeline.html</guid>
-      <description></description>
+      <description>Our first build pipeline is a Gradle pipeline that builds our Java web app. This pipeline uses a GradleBuild native pipeline step to compile and build the code. DockerBuild and DockerPush native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the XrayScan native step. Then it pushes the produced artifacts to the staging repository in Artifactory along with all build information by using the PromoteBuild native step.</description>
     </item>
     
     <item>
