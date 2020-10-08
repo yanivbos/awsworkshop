@@ -12,21 +12,21 @@
     <title>Execute the NPM Build Pipeline :: JFrog Workshop</title>
 
     
-    <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602130805" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/fontawesome-all.min.css?1602130805" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/hybrid.css?1602130805" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/featherlight.min.css?1602130805" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/perfect-scrollbar.min.css?1602130805" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/auto-complete.css?1602130805" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/atom-one-dark-reasonable.css?1602130805" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/theme.css?1602130805" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/hugo-theme.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602194362" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/fontawesome-all.min.css?1602194362" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/hybrid.css?1602194362" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/featherlight.min.css?1602194362" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/perfect-scrollbar.min.css?1602194362" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/auto-complete.css?1602194362" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/atom-one-dark-reasonable.css?1602194362" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/theme.css?1602194362" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/hugo-theme.css?1602194362" rel="stylesheet">
     
-    <link href="https://jefferyfry.github.io/awsworkshop/css/theme-mine.css?1602130805" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/theme-mine.css?1602194362" rel="stylesheet">
     
     
 
-    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery-3.3.1.min.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery-3.3.1.min.js?1602194362"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/lunr.min.js?1602130805"></script>
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/auto-complete.js?1602130805"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/lunr.min.js?1602194362"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/auto-complete.js?1602194362"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jefferyfry.github.io\/awsworkshop\/";
     
 </script>
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/search.js?1602130805"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/search.js?1602194362"></script>
 
     
   </div>
@@ -438,6 +438,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/70_jfrog_devops_hands-on_lab/80_conclusion.html" title="Conclusion" class="dd-item ">
+        <a href="https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/80_conclusion.html">
+        Conclusion
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
               
@@ -570,6 +591,103 @@
         
 
 
+<p>Our second build pipeline is a NPM pipeline that builds our user interface that connects to our previously built Gradle Java webapp. This pipeline uses a <a href="https://www.jfrog.com/confluence/display/JFROG/NpmBuild" target="_blank">NpmBuild</a> native Pipelines step build the user interface components. Then it uses a generic <a href="https://www.jfrog.com/confluence/display/JFROG/Bash" target="_blank">Bash</a> step to package the components. Next, it uses <a href="https://www.jfrog.com/confluence/display/JFROG/NpmPublish" target="_blank">NpmBuild</a> to publish the components. Finally, similar to the Gradle build, <a href="https://www.jfrog.com/confluence/display/JFROG/DockerBuild" target="_blank">DockerBuild</a>, <a href="https://www.jfrog.com/confluence/display/JFROG/DockerPush" target="_blank">DockerPush</a>, <a href="https://www.jfrog.com/confluence/display/JFROG/XrayScan" target="_blank">XrayScan</a> and <a href="https://www.jfrog.com/confluence/display/JFROG/PromoteBuild" target="_blank">PromoteBuild</a> are used to promote a final docker image to the staging repository.</p>
+
+<p><img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-pipeline-steps.svg" alt="Npm Build Steps" /></p>
+
+<ol>
+<li>Go to <strong>Pipelines</strong> ► <strong>My Pipelines</strong>.
+<img src="https://jefferyfry.github.io/awsworkshop/images/MyPipelinesFinal.png" alt="My Pipelines" /></li>
+<li>Click on the <strong>npm_build</strong> pipeline in the <strong>Pipelines List</strong>.</li>
+<li>Click on the <strong>View YAML</strong> icon to the right to view the pipeline steps discussed above.
+<img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-yaml.png" alt="NPM Build YAML" /></li>
+<li>Click on the <strong>Resources</strong> tab to view the details for all the resources that are used in our pipeline.</li>
+<li>Click on the <strong>Pipeline</strong> tab.</li>
+
+<li><p>The first step <em>npm_prep</em> is an NpmBuild step. This prepares the NPM environment for building. Additionally, the following occurs:</p>
+
+<ul>
+<li>The NPM repository is specified with <em>repositoryName</em>.</li>
+<li>Our Artifactory integration specifies our Artifactory server and <em>inputResources</em> is the same source code location.</li>
+
+<li><p><em>onStart</em> is used to execute bash commands to set our NPM version prior to executing the step. Steps have additional <a href="https://www.jfrog.com/confluence/display/JFROG/Pipelines+Steps#PipelinesSteps-StepExecution" target="_blank">lifecycle callbacks</a>: <em>onExecute</em>, <em>onSuccess</em>, <em>onFailure</em> and <em>onComplete</em>.</p>
+<pre><code>- name: npm_prep
+type: NpmBuild
+configuration:
+  npmArgs:   --no-progress --no-audit
+  repositoryName: npm-demo
+  sourceLocation: tutorial/step2-create-ui-pkg
+  integrations:
+    - name: Artifactory
+  inputResources:
+    - name: gitRepo_code
+execution:
+  onStart:
+    - pushd ${res_gitRepo_code_resourcePath}/tutorial/step2-create-ui-pkg
+    - npm version ${Version} --no-git-tag-version
+    - popd</code></pre></li>
+</ul></li>
+
+<li><p>Next, we have a <a href="https://www.jfrog.com/confluence/display/JFROG/Bash" target="_blank">Bash</a> step, <em>npm_compile</em>. <a href="https://www.jfrog.com/confluence/display/JFROG/Bash" target="_blank">Bash</a>  steps are very powerful, because they allows you to execute practically any commands. The purpose of this step is to compile our NPM package. In this step, we do the following in <em>onStart</em>:</p>
+
+<ul>
+<li><a href="https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions#PipelinesUtilityFunctions-restore_run_files" target="_blank">restore_run_files</a> is a <a href="https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions" target="_blank">Pipeline Utility Function</a> copies the current run state or context to a location to compile.</li>
+<li><em>npm install</em> installs our packages.</li>
+
+<li><p><a href="https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions#PipelinesUtilityFunctions-add_run_files" target="_blank">add_run_files</a> adds our temporary state or context back to the initial run state.</p>
+<pre><code>- name: npm_compile
+type: Bash
+configuration:
+inputSteps:
+- name: npm_prep
+integrations:
+- name: Artifactory
+execution:
+onStart:
+- export tempStateLocation=&#34;$step_tmp_dir/npmSourceState&#34;
+- restore_run_files npmBuildInputGitRepo $tempStateLocation
+- pushd $tempStateLocation/tutorial/step2-create-ui-pkg
+- npm install shelljs
+- npm install
+- add_run_files $tempStateLocation/. npmBuildInputGitRepo
+- popd</code></pre></li>
+</ul></li>
+
+<li><p>The next step, <em>npm_publish</em>, uses <a href="https://www.jfrog.com/confluence/display/JFROG/NpmPublish" target="_blank">NpmPublish</a> to publish a package to the Artifactory repository <em>npm-demo</em>.</p>
+<pre><code>- name: npm_publish
+type: NpmPublish
+configuration:
+  repositoryName: npm-demo
+  integrations:
+    - name: Artifactory
+  inputSteps:
+    - name: npm_compile
+execution:
+  onStart:
+    - export inputNpmBuildStepName=&#34;npm_prep&#34;</code></pre></li>
+
+<li><p>The remaining steps are the same as what you saw in the Gradle build. <a href="https://www.jfrog.com/confluence/display/JFROG/DockerBuild" target="_blank">DockerBuild</a>, <a href="https://www.jfrog.com/confluence/display/JFROG/DockerPush" target="_blank">DockerPush</a>, <a href="https://www.jfrog.com/confluence/display/JFROG/XrayScan" target="_blank">XrayScan</a> and <a href="https://www.jfrog.com/confluence/display/JFROG/PromoteBuild" target="_blank">PromoteBuild</a> are used to build, scan, publish and promote our docker image with our NPM user interface to a staging repository.</p></li>
+
+<li><p>Close the <strong>VIEW YAML</strong> window.</p></li>
+
+<li><p>Click on the first step and further click on the trigger step icon to execute this pipeline. It will take several minutes for this pipeline to run (~10 minutes).
+<img src="https://jefferyfry.github.io/awsworkshop/images/TriggerNpmPipeline.png" alt="Tigger Npm Pipeline" /></p></li>
+
+<li><p>When the run is finished successfully, switch to the Builds view in Artifactory. Go to <strong>Artifactory</strong> ► <strong>Builds</strong>.</p></li>
+
+<li><p>Click on <strong>npm_build</strong> in the list.</p></li>
+
+<li><p>Then click on your most recent build.
+<img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-build.png" alt="Npm Build Build" /></p></li>
+
+<li><p>In the <strong>Published Modules</strong> tab, view the set of artifacts and dependencies for your build.
+<img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-published-modules.png" alt="Npm Build Published Modules" /></p></li>
+
+<li><p>In the <strong>Xray Data</strong> tab, view the security and license violations.
+<img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-xray-data.png" alt="Npm Build Xray Data" /></p></li>
+</ol>
+
+<p>This NPM build pipeline provided another of example of how JFrog Pipelines, Artifactory and Xray can automate your software delivery. You explored new steps for NPM and learned how to use the flexible Bash step.</p>
 
 
 <footer class="footline">
@@ -859,9 +977,6 @@
             
         
                     
-            
-        
-                    
                         
             
             
@@ -869,6 +984,25 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -893,7 +1027,7 @@
 			<a class="nav nav-prev" href="https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/60_execute_gradle_build_pipeline.html" title="Execute the Gradle Build Pipeline"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/999_additional_resources.html" title="Additional Resources" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/80_conclusion.html" title="Conclusion" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -903,19 +1037,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/clipboard.min.js?1602130805"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.min.js?1602130805"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.jquery.min.js?1602130805"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery.sticky.js?1602130805"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/featherlight.min.js?1602130805"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/highlight.pack.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/clipboard.min.js?1602194362"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.min.js?1602194362"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.jquery.min.js?1602194362"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery.sticky.js?1602194362"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/featherlight.min.js?1602194362"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/highlight.pack.js?1602194362"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/modernizr.custom-3.6.0.js?1602130805"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/learn.js?1602130805"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/hugo-learn.js?1602130805"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/modernizr.custom-3.6.0.js?1602194362"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/learn.js?1602194362"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/hugo-learn.js?1602194362"></script>
     
         
-            <script src="https://jefferyfry.github.io/awsworkshop/mermaid/mermaid.js?1602130805"></script>
+            <script src="https://jefferyfry.github.io/awsworkshop/mermaid/mermaid.js?1602194362"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
