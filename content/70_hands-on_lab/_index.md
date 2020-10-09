@@ -1,5 +1,5 @@
 ---
-title: "JFrog Devops Hands-On Lab"
+title: "Hands-On Lab"
 chapter: false
 weight: 70
 ---

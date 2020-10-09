@@ -1,5 +1,5 @@
 ---
-title: "JFrog Modernization Workshop"
+title: "JFrog DevOps Modernization Workshop"
 chapter: true
 weight: 1
 ---

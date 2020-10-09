@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://jefferyfry.github.io/awsworkshop/images/favicon.png" type="image/png">
 
-    <title>JFrog Platform Overview :: JFrog Workshop</title>
+    <title>Execute the NPM Build Pipeline :: JFrog Workshop</title>
 
     
     <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602217564" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="https://jefferyfry.github.io/awsworkshop/60_jfrog_platform_overview.html">
+  <body class="" data-url="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/70_execute_npm_build_pipeline.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -225,8 +225,8 @@
   
     
     <li data-nav-id="/60_jfrog_platform_overview.html" title="JFrog Platform Overview" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jefferyfry.github.io/awsworkshop/60_jfrog_platform_overview.html">
@@ -251,7 +251,7 @@
   
     
     <li data-nav-id="/70_hands-on_lab.html" title="Hands-On Lab" class="dd-item 
-        
+        parent
         
         
         ">
@@ -426,7 +426,7 @@
  
   
     
-      <li data-nav-id="/70_hands-on_lab/70_execute_npm_build_pipeline.html" title="Execute the NPM Build Pipeline" class="dd-item ">
+      <li data-nav-id="/70_hands-on_lab/70_execute_npm_build_pipeline.html" title="Execute the NPM Build Pipeline" class="dd-item active">
         <a href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/70_execute_npm_build_pipeline.html">
         Execute the NPM Build Pipeline
         <i class="fas fa-check read-icon"></i>
@@ -551,7 +551,13 @@
             
           
           
-            <a href='https://jefferyfry.github.io/awsworkshop/'>JFrog DevOps Modernization Workshop</a> > JFrog Platform Overview
+            
+            
+          
+          
+            <a href='https://jefferyfry.github.io/awsworkshop/'>JFrog DevOps Modernization Workshop</a> > <a href='https://jefferyfry.github.io/awsworkshop/70_hands-on_lab.html'>Hands-On Lab</a> > Execute the NPM Build Pipeline
+          
+        
           
         
           
@@ -578,68 +584,120 @@
           
             <h1>
               
-              JFrog Platform Overview
+              Execute the NPM Build Pipeline
             </h1>
           
 
         
 
 
+<p>Our second build pipeline is a NPM pipeline that builds our user interface that connects to our previously built Gradle Java webapp. This pipeline uses a <a href="https://www.jfrog.com/confluence/display/JFROG/NpmBuild" target="_blank">NpmBuild</a> native Pipelines step build the user interface components. Then it uses a generic <a href="https://www.jfrog.com/confluence/display/JFROG/Bash" target="_blank">Bash</a> step to package the components. Next, it uses <a href="https://www.jfrog.com/confluence/display/JFROG/NpmPublish" target="_blank">NpmBuild</a> to publish the components. Finally, similar to the Gradle build, <a href="https://www.jfrog.com/confluence/display/JFROG/DockerBuild" target="_blank">DockerBuild</a>, <a href="https://www.jfrog.com/confluence/display/JFROG/DockerPush" target="_blank">DockerPush</a>, <a href="https://www.jfrog.com/confluence/display/JFROG/XrayScan" target="_blank">XrayScan</a> and <a href="https://www.jfrog.com/confluence/display/JFROG/PromoteBuild" target="_blank">PromoteBuild</a> are used to promote a final docker image to the staging repository.</p>
 
-	<p>The JFrog Platform is designed to meet the growing needs of companies to develop and distribute software. It provides DevOps with the tools needed to create, manage and deploy software with ease. These tools cover everything from binary management, artifact maturity, security and vulnerability protection, CI/CD orchestration, release management, analytics and distribution.</p>
-
-<p><img src="https://jefferyfry.github.io/awsworkshop/images/JFrog-Platform-Diagram_Mar20_Desktop.png.webp" alt="JFrog Platform" /></p>
-
-<p><strong>JFrog Artifactory</strong> is an Artifact Repository Manager that fully supports software packages created by any language or technology. Furthermore, it integrates with all major CI/CD and DevOps tools to provide an end-to-end, automated solution for tracking artifacts from development to production.</p>
-
-<p><strong>JFrog Xray</strong> provides universal artifact analysis, increasing visibility and performance of your software components by recursively scanning all layers of your organization’s binary packages to provide radical transparency and unparalleled insight into your software architecture.</p>
-
-<p><strong>JFrog Distribution</strong> empowers DevOps to distribute and continuously update remote locations with release-ready binaries.</p>
-
-<p><strong>JFrog Artifactory Edge</strong> accelerates and provides control of release-ready binary distribution through a secure distributed network and edge nodes.</p>
-
-<p><strong>JFrog Mission Control and Insight</strong> is your DevOps dashboard solution for managing multiple services of Artifactory, Xray, Edge and Distribution.</p>
-
-<p><strong>JFrog Access with Federation</strong> provides governance to the distribution of artifacts by managing releases, permissions and access levels.</p>
-
-<p><strong>JFrog Pipelines</strong> helps automate the non-human part of the whole software development process with continuous integration and empowers teams to implement the technical aspects of continuous delivery.</p>
-
-<p>All of these JFrog Platform components are designed and developed to work together out-of-the-box with minimal configuration. Management and monitoring of your software delivery lifecycle from build to distribution is accessible though a central, unified user interface. The JFrog platform is enterprise ready with your choice of on-prem, cloud, multi-cloud or hybrid deployments that scale as you grow.</p>
-
-<p><img src="https://jefferyfry.github.io/awsworkshop/images/platform-ui.png" alt="Platform UI" /></p>
+<p><img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-pipeline-steps.svg" alt="Npm Build Steps" /></p>
 
 
+<div class="notices info" ><p style='text-align: left;'>
+Steps are executed on build nodes. Dynamic build node pools are spun up and down on-demand by Pipelines from a cloud or Kubernetes service. This can help scale operations, and help manage costs by not incurring cloud service charges to run idle nodes. Static build node pools can also be used and are persistently available.
+</p>
+</div>
 
 
+<ol>
+<li>Go to <strong>Pipelines</strong> ► <strong>My Pipelines</strong>.
+<img src="https://jefferyfry.github.io/awsworkshop/images/MyPipelinesFinal.png" alt="My Pipelines" /></li>
+<li>Click on the <strong>npm_build</strong> pipeline in the <strong>Pipelines List</strong>.</li>
+<li>Click on the <strong>View YAML</strong> icon to the right to view the pipeline steps discussed above.
+<img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-yaml.png" alt="NPM Build YAML" /></li>
+<li>Click on the <strong>Resources</strong> tab to view the details for all the resources that are used in our pipeline.</li>
+<li>Click on the <strong>Pipeline</strong> tab.</li>
+
+<li><p>The first step <em>npm_prep</em> is an NpmBuild step. This prepares the NPM environment for building. Additionally, the following occurs:</p>
+
+<ul>
+<li>The NPM repository is specified with <em>repositoryName</em>.</li>
+<li>Our Artifactory integration specifies our Artifactory server and <em>inputResources</em> is the same source code location.</li>
+
+<li><p><em>onStart</em> is used to execute bash commands to set our NPM version prior to executing the step. Steps have additional <a href="https://www.jfrog.com/confluence/display/JFROG/Pipelines+Steps#PipelinesSteps-StepExecution" target="_blank">lifecycle callbacks</a>: <em>onExecute</em>, <em>onSuccess</em>, <em>onFailure</em> and <em>onComplete</em>.</p>
+<pre><code>- name: npm_prep
+type: NpmBuild
+configuration:
+  npmArgs:   --no-progress --no-audit
+  repositoryName: npm-demo
+  sourceLocation: tutorial/step2-create-ui-pkg
+  integrations:
+    - name: Artifactory
+  inputResources:
+    - name: gitRepo_code
+execution:
+  onStart:
+    - pushd ${res_gitRepo_code_resourcePath}/tutorial/step2-create-ui-pkg
+    - npm version ${Version} --no-git-tag-version
+    - popd</code></pre></li>
+</ul></li>
+
+<li><p>Next, we have a <a href="https://www.jfrog.com/confluence/display/JFROG/Bash" target="_blank">Bash</a> step, <em>npm_compile</em>. <a href="https://www.jfrog.com/confluence/display/JFROG/Bash" target="_blank">Bash</a>  steps are very powerful, because they allows you to execute practically any commands. The purpose of this step is to compile our NPM package. In this step, we do the following in <em>onStart</em>:</p>
+
+<ul>
+<li><a href="https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions#PipelinesUtilityFunctions-restore_run_files" target="_blank">restore_run_files</a> is a <a href="https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions" target="_blank">Pipeline Utility Function</a> copies the current run state or context to a location to compile.</li>
+<li><em>npm install</em> installs our packages.</li>
+
+<li><p><a href="https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions#PipelinesUtilityFunctions-add_run_files" target="_blank">add_run_files</a> adds our temporary state or context back to the initial run state.</p>
+<pre><code>- name: npm_compile
+type: Bash
+configuration:
+inputSteps:
+- name: npm_prep
+integrations:
+- name: Artifactory
+execution:
+onStart:
+- export tempStateLocation=&#34;$step_tmp_dir/npmSourceState&#34;
+- restore_run_files npmBuildInputGitRepo $tempStateLocation
+- pushd $tempStateLocation/tutorial/step2-create-ui-pkg
+- npm install shelljs
+- npm install
+- add_run_files $tempStateLocation/. npmBuildInputGitRepo
+- popd</code></pre></li>
+</ul></li>
+
+<li><p>The next step, <em>npm_publish</em>, uses <a href="https://www.jfrog.com/confluence/display/JFROG/NpmPublish" target="_blank">NpmPublish</a> to publish a package to the Artifactory repository <em>npm-demo</em>.</p>
+<pre><code>- name: npm_publish
+type: NpmPublish
+configuration:
+  repositoryName: npm-demo
+  integrations:
+    - name: Artifactory
+  inputSteps:
+    - name: npm_compile
+execution:
+  onStart:
+    - export inputNpmBuildStepName=&#34;npm_prep&#34;</code></pre></li>
+
+<li><p>The remaining steps are the same as what you saw in the Gradle build. <a href="https://www.jfrog.com/confluence/display/JFROG/DockerBuild" target="_blank">DockerBuild</a>, <a href="https://www.jfrog.com/confluence/display/JFROG/DockerPush" target="_blank">DockerPush</a>, <a href="https://www.jfrog.com/confluence/display/JFROG/XrayScan" target="_blank">XrayScan</a> and <a href="https://www.jfrog.com/confluence/display/JFROG/PromoteBuild" target="_blank">PromoteBuild</a> are used to build, scan, publish and promote our docker image with our NPM user interface to a staging repository.</p></li>
+
+<li><p>Close the <strong>VIEW YAML</strong> window.</p></li>
+
+<li><p>Click on the first step and further click on the trigger step icon to execute this pipeline. It will take several minutes for this pipeline to run (~10 minutes).
+<img src="https://jefferyfry.github.io/awsworkshop/images/TriggerNpmPipeline.png" alt="Tigger Npm Pipeline" /></p></li>
+
+<li><p>When the run is finished successfully, switch to the Builds view in Artifactory. Go to <strong>Artifactory</strong> ► <strong>Builds</strong>.</p></li>
+
+<li><p>Click on <strong>npm_build</strong> in the list.</p></li>
+
+<li><p>Then click on your most recent build.
+<img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-build.png" alt="Npm Build Build" /></p></li>
+
+<li><p>In the <strong>Published Modules</strong> tab, view the set of artifacts and dependencies for your build.
+<img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-published-modules.png" alt="Npm Build Published Modules" /></p></li>
+
+<li><p>In the <strong>Xray Data</strong> tab, view the security and license violations.
+<img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-xray-data.png" alt="Npm Build Xray Data" /></p></li>
+</ol>
+
+<p>This NPM build pipeline provided another of example of how JFrog Pipelines, Artifactory and Xray can automate your software delivery. You explored new steps for NPM and learned how to use the flexible Bash step.</p>
 
 
-
-
-<ul class="children children-li">
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-
-	
-</ul>
-
-
-
-
-
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -773,7 +831,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -790,9 +847,6 @@
             
                 
                     
-                        
-                        
-                    
                 
                 
 
@@ -800,22 +854,6 @@
                     
                     
 
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
                         
             
@@ -933,6 +971,26 @@
             
             
                 
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -973,10 +1031,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jefferyfry.github.io/awsworkshop/50_devops_cloud/30_unified_solution.html" title="Unified Platform"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/60_execute_gradle_build_pipeline.html" title="Execute the Gradle Build Pipeline"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab.html" title="Hands-On Lab" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/80_conclusion.html" title="Conclusion" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1008,3 +1066,4 @@
 
   </body>
 </html>
+

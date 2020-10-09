@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://jefferyfry.github.io/awsworkshop/images/favicon.png" type="image/png">
 
-    <title>JFrog Platform Overview :: JFrog Workshop</title>
+    <title>Hands-On Lab :: JFrog Workshop</title>
 
     
     <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602217564" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="https://jefferyfry.github.io/awsworkshop/60_jfrog_platform_overview.html">
+  <body class="" data-url="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -225,8 +225,8 @@
   
     
     <li data-nav-id="/60_jfrog_platform_overview.html" title="JFrog Platform Overview" class="dd-item 
-        parent
-        active
+        
+        
         
         ">
       <a href="https://jefferyfry.github.io/awsworkshop/60_jfrog_platform_overview.html">
@@ -251,8 +251,8 @@
   
     
     <li data-nav-id="/70_hands-on_lab.html" title="Hands-On Lab" class="dd-item 
-        
-        
+        parent
+        active
         
         ">
       <a href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab.html">
@@ -551,7 +551,7 @@
             
           
           
-            <a href='https://jefferyfry.github.io/awsworkshop/'>JFrog DevOps Modernization Workshop</a> > JFrog Platform Overview
+            <a href='https://jefferyfry.github.io/awsworkshop/'>JFrog DevOps Modernization Workshop</a> > Hands-On Lab
           
         
           
@@ -578,7 +578,7 @@
           
             <h1>
               
-              JFrog Platform Overview
+              Hands-On Lab
             </h1>
           
 
@@ -586,53 +586,20 @@
 
 
 
-	<p>The JFrog Platform is designed to meet the growing needs of companies to develop and distribute software. It provides DevOps with the tools needed to create, manage and deploy software with ease. These tools cover everything from binary management, artifact maturity, security and vulnerability protection, CI/CD orchestration, release management, analytics and distribution.</p>
+	<p>In this tutorial we’ll build a containerized microservice with an example Java and NPM two-tier web application which requires third party dependencies and Docker images used for deployment.
+The Pipelines provided in this tutorial include two pre-configured pipelines that will provide you the experience in building and publishing a multi-stage web application.</p>
 
-<p><img src="https://jefferyfry.github.io/awsworkshop/images/JFrog-Platform-Diagram_Mar20_Desktop.png.webp" alt="JFrog Platform" /></p>
+<ol>
+<li><p><strong>gradle-build</strong> creates a Java web app which displays some images.</p></li>
 
-<p><strong>JFrog Artifactory</strong> is an Artifact Repository Manager that fully supports software packages created by any language or technology. Furthermore, it integrates with all major CI/CD and DevOps tools to provide an end-to-end, automated solution for tracking artifacts from development to production.</p>
-
-<p><strong>JFrog Xray</strong> provides universal artifact analysis, increasing visibility and performance of your software components by recursively scanning all layers of your organization’s binary packages to provide radical transparency and unparalleled insight into your software architecture.</p>
-
-<p><strong>JFrog Distribution</strong> empowers DevOps to distribute and continuously update remote locations with release-ready binaries.</p>
-
-<p><strong>JFrog Artifactory Edge</strong> accelerates and provides control of release-ready binary distribution through a secure distributed network and edge nodes.</p>
-
-<p><strong>JFrog Mission Control and Insight</strong> is your DevOps dashboard solution for managing multiple services of Artifactory, Xray, Edge and Distribution.</p>
-
-<p><strong>JFrog Access with Federation</strong> provides governance to the distribution of artifacts by managing releases, permissions and access levels.</p>
-
-<p><strong>JFrog Pipelines</strong> helps automate the non-human part of the whole software development process with continuous integration and empowers teams to implement the technical aspects of continuous delivery.</p>
-
-<p>All of these JFrog Platform components are designed and developed to work together out-of-the-box with minimal configuration. Management and monitoring of your software delivery lifecycle from build to distribution is accessible though a central, unified user interface. The JFrog platform is enterprise ready with your choice of on-prem, cloud, multi-cloud or hybrid deployments that scale as you grow.</p>
-
-<p><img src="https://jefferyfry.github.io/awsworkshop/images/platform-ui.png" alt="Platform UI" /></p>
+<li><p><strong>npm-build</strong> builds a NPM user interface that connects to the Java web app.</p></li>
+</ol>
 
 
-
-
-
-
-
-
-<ul class="children children-li">
-	
-
-	
-		
-	
-
-	
-
-	
-		
-	
-
-	
-</ul>
-
-
-
+<div class="notices info" ><p style='text-align: left;'>
+Throughout all of the lab pipelines, all artifacts are pushed to Artifactory. Artifacts in Artifactory are annotated with metadata, especially in the case of builds which come with exhaustive metadata that facilitate full traceability. This, for example, prevents the deletion of dependencies which are needed by a build. We’ll see this later on in the tutorial when we use the Tree Browser in Artifactory to view one of the artifacts produced in our build.
+</p>
+</div>
 
 
 
@@ -773,7 +740,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -790,8 +756,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -805,6 +769,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -973,10 +940,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jefferyfry.github.io/awsworkshop/50_devops_cloud/30_unified_solution.html" title="Unified Platform"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jefferyfry.github.io/awsworkshop/60_jfrog_platform_overview.html" title="JFrog Platform Overview"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab.html" title="Hands-On Lab" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_workshop_repos.html" title="Fork the Lab Repositories" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

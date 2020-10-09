@@ -7,7 +7,7 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/1_fork_workshop_repos.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_workshop_repos.html</loc>
   </url>
   
   <url>
@@ -19,7 +19,7 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/10_configure_github_integration.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/10_configure_github_integration.html</loc>
   </url>
   
   <url>
@@ -27,7 +27,7 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/20_configure_artifactory_integration.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/20_configure_artifactory_integration.html</loc>
   </url>
   
   <url>
@@ -35,7 +35,7 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/30_configure_initialization_pipeline.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/30_configure_initialization_pipeline.html</loc>
   </url>
   
   <url>
@@ -43,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/40_configure_pipeline_source.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/40_configure_pipeline_source.html</loc>
   </url>
   
   <url>
@@ -51,11 +51,11 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/50_execute_initialization_pipeline.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/50_execute_initialization_pipeline.html</loc>
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/60_execute_gradle_build_pipeline.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/60_execute_gradle_build_pipeline.html</loc>
   </url>
   
   <url>
@@ -63,15 +63,15 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/70_execute_npm_build_pipeline.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/70_execute_npm_build_pipeline.html</loc>
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab.html</loc>
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/80_conclusion.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/80_conclusion.html</loc>
   </url>
   
   <url>
