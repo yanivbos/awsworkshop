@@ -8,6 +8,12 @@ Our second build pipeline is a NPM pipeline that builds our user interface that 
 
 ![Npm Build Steps](/images/npm-build-pipeline-steps.svg) 
 
+{{% notice info %}}
+<p style='text-align: left;'>
+Steps are executed on build nodes. Dynamic build node pools are spun up and down on-demand by Pipelines from a cloud or Kubernetes service. This can help scale operations, and help manage costs by not incurring cloud service charges to run idle nodes. Static build node pools can also be used and are persistently available.
+</p>
+{{% /notice %}}
+
 1. Go to **Pipelines** ► **My Pipelines**.
 ![My Pipelines](/images/MyPipelinesFinal.png)
 2. Click on the **npm_build** pipeline in the **Pipelines List**.

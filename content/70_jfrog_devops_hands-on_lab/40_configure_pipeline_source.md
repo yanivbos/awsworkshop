@@ -6,6 +6,12 @@ weight: 40
 
 In these next steps, we will add the previous pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to executes these pipelines automatically whenever there is a commit or manually as needed.
 
+{{% notice info %}}
+<p style='text-align: left;'>
+A Pipeline Source represents a source control repository (such as GitHub or BitBucket) where Pipelines definition files can be found. A pipeline source connects to the repository through an integration.
+</p>
+{{% /notice %}}
+
 1. In your JFrog Platform instance, go to **Pipelines** ► **Pipeline Sources**.
 ![Pipeline Sources](/images/PipelineSources.png)
 2. Click on **Add Pipeline Source**.
@@ -25,3 +31,4 @@ It will take a few moments for JFrog Pipelines to sync the pipelines from your n
 ![My Pipelines](/images/MyPipelinesFinal.png)
 
 With your pipelines added, we are now ready to execute the pipelines, initialize our environment and build our artifacts!
+

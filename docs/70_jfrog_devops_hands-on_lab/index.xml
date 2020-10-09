@@ -35,7 +35,7 @@
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/20_configure_artifactory_integration.html</guid>
       <description>Similar to the GitHub Integration, in the following steps you will configure an Artifactory Integration that allows JFrog Pipelines to also access your Artifactory repositories in order to publish your artifacts and build info. You will do this by creating an API key.
- In your JFrog Platform instance, go your profile and select Edit Profile. Enter your password and click Unlock to edit the profile. In the Authentication Settings section, click the gear icon to generate an API key.</description>
+Artifactory offers a universal solution supporting all major package formats including Alpine, Maven, Gradle, Docker, Conda, Conan, Debian, Go, Helm, Vagrant, YUM, P2, Ivy, NuGet, PHP, NPM, RubyGems, PyPI, Bower, CocoaPods, GitLFS, Opkg, SBT and more.</description>
     </item>
     
     <item>
@@ -55,7 +55,7 @@
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/40_configure_pipeline_source.html</guid>
       <description>In these next steps, we will add the previous pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to executes these pipelines automatically whenever there is a commit or manually as needed.
- In your JFrog Platform instance, go to Pipelines ► Pipeline Sources.  Click on Add Pipeline Source. Choose Single Branch. This is for repositories that only have one branch like master. For the Integration choose the GitHub Integration that you created previously named GitHub.</description>
+A Pipeline Source represents a source control repository (such as GitHub or BitBucket) where Pipelines definition files can be found. A pipeline source connects to the repository through an integration.   In your JFrog Platform instance, go to Pipelines ► Pipeline Sources.</description>
     </item>
     
     <item>
@@ -65,7 +65,7 @@
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_jfrog_devops_hands-on_lab/50_execute_initialization_pipeline.html</guid>
       <description>The first pipeline that we will execute will initialize our environment. This pipeline will create users, groups, permissions, repositories, Xray policies and watches, Xray indexes and access federation. This prepares our JFrog Platform instance to run our gradle and npm build pipelines.
- Go to Pipelines ► My Pipelines.  Click on the init_environment pipeline in the Pipelines List. Click on the first step and further click on the trigger step icon to execute this pipeline.</description>
+This pipeline initializes the JFrog Platform for the next build pipelines by creating the necessary users, repositories, permissions and Xray configuration. It does this by using the JFrog Platform REST APIs.</description>
     </item>
     
     <item>

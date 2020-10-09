@@ -8,6 +8,12 @@ Our first build pipeline is a Gradle pipeline that builds our Java web app. This
 
 ![Gradle Build Steps](/images/gradle-build-pipeline-steps.svg) 
 
+{{% notice info %}}
+<p style='text-align: left;'>
+A Step is a unit of execution in a pipeline. It is triggered by some event and uses resources to perform an action as part of the pipeline. Steps take Inputs in the form of Integrations or Resources, execute tasks that perform the operations necessary and then produce Outputs. These Outputs can become Inputs to other steps and so on forming a dependency-based, event-driven pipeline.
+</p>
+{{% /notice %}}
+
 1. Go to **Pipelines** ► **My Pipelines**.
 ![My Pipelines](/images/MyPipelinesFinal.png)
 2. Click on the **gradle_build** pipeline in the **Pipelines List**.
