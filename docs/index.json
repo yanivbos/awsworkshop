@@ -4,7 +4,7 @@
 	"title": "Continuous Integration and Delivery",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "Continuous integration and delivery (CI/CD) is the process for which your software components are built from code, integrated, tested, released, deployed and ultimately delivered to customers. CI/CD pipelines are the software assembly line that orchestrates the building of your software. This CI/CD pipeline line requires infrastructure. Cloud computing has allowed this infrastructure to become dynamic and ephemeral. On cloud infrastructure, your CI/CD pipelines scale up and down to meet your software delivery demands. But at the same time, it saves costs by providing the right amount of cloud infrastructure just as it is needed. This is further realized by using cloud-native technologies like Kubernetes and extending across clouds and on-premise datacenters. The following are some AWS cloud technologies that CI/CD pipelines can utilize:\n EC2 instances can be uses as CI/CD pipeline nodes that can be dynamically spun up and down to execute pipeline tasks. EC2 spot instances can dramatically lower costs by utilizing spare capacity nodes for pipeline tasks. EKS can provide a Kubernetes-based node pool and allow more efficient use of compute resources. AWS Outposts can allow you to span your CI/CD pipelines from your on-premise datacenter to the cloud for hybrid and migration use cases.  "
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_workshop_repos.html",
@@ -63,13 +63,6 @@
 	"content": "Next, we will update the lab pipelines to add your new GitHub and Artifactory integrations. In previous steps, you forked and cloned the lab repositories. We will modify the initialization pipeline in your forked Horae repository to add these integrations.\n In your local git directory, open Horae/pipelines/base_init.yml in an editor. Update the resources section of the file to use your forked repositories. Change the path to use your username.\nresources: - name: demo_gitRepo type: GitRepo configuration: path: [your_Github_username]/Horae \u0026lt;\u0026lt;\u0026lt;--- CHANGE HERE gitProvider: GitHub - name: gitRepo_code type: GitRepo configuration: path: [your_Github_username]/project-examples \u0026lt;\u0026lt;\u0026lt;--- CHANGE HERE gitProvider: GitHub branches: include: eplus-v2-orbitera  Save your changes.\n In your terminal, git add, commit and push your changes.\n$ git add . $ git commit -m \u0026#39;Updated repository paths.\u0026#39; $ git push Go to https://github.com/[username]/Horae/blob/master/pipelines/base_init.yml and verify your changes were made and pushed to your GitHub repository.\n  We are now ready to add and execute your pipelines with JFrog Pipelines.\n"
 },
 {
-	"uri": "https://jefferyfry.github.io/awsworkshop/50_devops_cloud/30_unified_solution.html",
-	"title": "Unified Platform",
-	"tags": [],
-	"description": "",
-	"content": ""
-},
-{
 	"uri": "https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/40_configure_pipeline_source.html",
 	"title": "Configure the Pipeline Source",
 	"tags": [],
@@ -81,7 +74,7 @@
 	"title": "DevOps in the Cloud",
 	"tags": [],
 	"description": "",
-	"content": ""
+	"content": "The goal of DevOps is to allow your development teams to deliver quality software faster to your customers through continuous process improvement, leveraging the best of breed development tools and infrastructure, and utilizing software development and IT operations best practices. Your team must deliver software faster than your competitors in order to get features and fixes to your customers sooner. JFrog terms this ideal as liquid software.\n Looking forward, as release cycles get shorter and microservices get smaller, we can imagine a world in which at any one time, our systems’ software is being updated. Effectively, software will become liquid in that products and services will be connected to “software pipes” that constantly stream updates into our systems and devices; liquid software continuously and automatically updating our systems with no human intervention.\n A critical aspect of DevOps is infrastructure. Cloud computing infrastructure has allowed DevOps to advance and come closer to realizing liquid software. Cloud computing has allowed development teams to build these software pipes by:\n Using ephemeral cloud infrastructure to scale their development process and software delivery at levels not achievable with on-premise infrastruture. Providing applications on a global scale with real-time response and resiliency. Leveraging new cloud services in their application and software development processes to improve the quality, security and delivery of their applications. Allowing multi-discipline teams to collaborate in the cloud across the software lifecycle to ensure quality, security, velocity and scale of applications.  "
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/50_execute_initialization_pipeline.html",
