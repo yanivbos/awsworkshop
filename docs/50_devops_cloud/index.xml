@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/1_continuous_integration_and_delivery.html</guid>
-      <description>Continuous integration and delivery (CI/CD) is the process for which your software components are built from code, integrated, tested, released, deployed and ultimately delivered to customers. CI/CD pipelines are the software assembly line that orchestrates the building of your software. This CI/CD pipeline line requires infrastructure. Cloud computing has allowed this infrastructure to become dynamic and ephemeral. On cloud infrastructure, your CI/CD pipelines scale up and down to meet your software delivery demands.</description>
+      <description>Continuous integration and delivery (CI/CD) is the process for which your software components are built from code, integrated, tested, released, deployed and ultimately delivered to end-users. CI/CD pipelines are the software assembly line that orchestrates the building of your software. This CI/CD pipeline line requires infrastructure. Cloud computing has allowed this infrastructure to become dynamic and ephemeral. On cloud infrastructure, your CI/CD pipelines scale up and down to meet your software delivery demands.</description>
     </item>
     
     <item>
@@ -21,7 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/10_binary_repository_management.html</guid>
-      <description></description>
+      <description>A Binary Repository Manager is a software hub that simplifies the development process for different teams across an organization by helping them to collaborate on building coherent and compatible software components. It does this by centralizing the management of all the binary artifacts generated and used by the organization, thereby overcoming the incredible complexity arising from diverse binary artifact types, their position in the overall workflow and the set of dependencies between them.</description>
     </item>
     
     <item>
@@ -30,7 +30,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/50_devops_cloud/20_dev_sec_ops.html</guid>
-      <description></description>
+      <description>Any security issue identified by a security scanning tool needs to be reviewed by a very small security team that may even lack the technical knowledge. This challenge can be reduced by shifting left to the developer and operations teams, making them also responsible for security and compliance, and moving security earlier in the software delivery process. Source code, dependency and artifact security scanning are some examples of moving security into the development process.</description>
     </item>
     
   </channel>
