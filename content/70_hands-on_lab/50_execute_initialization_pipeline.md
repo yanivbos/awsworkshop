@@ -14,8 +14,8 @@ This pipeline initializes the JFrog Platform for the next build pipelines by cre
 1. Go to **Pipelines** ► **My Pipelines**.
 ![My Pipelines](/images/MyPipelinesFinal.png)
 2. Click on the **init_environment** pipeline in the **Pipelines List**.
-3. Click on the first step and further click on the trigger step icon to execute this pipeline. A run will appear and it will take a few moments for JFrog Pipelines to allocate resources to execute the pipeline.
-![Tigger Init Pipeline](/images/TriggerInitPipeline.png)
+3. Click on the first step and further click on the trigger step icon to execute this pipeline. A run will appear, and it will take a few moments for JFrog Pipelines to allocate resources to execute the pipeline.
+![Trigger Init Pipeline](/images/TriggerInitPipeline.png)
 4. If the execution results in an error, click on the run to view the logs. Make any changes to the pipeline or integrations to correct any issues and then execute again.
 ![Run Error](/images/RunError.png)
 5. The run will show a success status when it completes without errors.

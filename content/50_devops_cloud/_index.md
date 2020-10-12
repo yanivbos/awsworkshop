@@ -12,7 +12,7 @@ The goal of DevOps is to allow your development teams to deliver quality softwar
 
 A critical aspect of DevOps is infrastructure. Cloud computing infrastructure has allowed DevOps to advance and come closer to realizing _liquid software_. Cloud computing has allowed development teams to build these software pipes by:
 
- - Using ephemeral cloud infrastructure to scale their development process and software delivery at levels not achievable with on-premise infrastruture.
+ - Using ephemeral cloud infrastructure to scale their development process and software delivery at levels not achievable with on-premise infrastructure.
  - Providing applications on a global scale with real-time response and resiliency.
  - Leveraging new cloud services in their application and software development processes to improve the quality, security and delivery of their applications.
  - Allowing multi-discipline teams to collaborate in the cloud across the software lifecycle to ensure quality, security, velocity and scale of applications.

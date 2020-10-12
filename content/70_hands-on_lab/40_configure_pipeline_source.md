@@ -4,7 +4,7 @@ chapter: false
 weight: 40
 ---
 
-In these next steps, we will add the previous pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to executes these pipelines automatically whenever there is a commit or manually as needed.
+In these next steps, we will add the previous pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to execute these pipelines automatically whenever there is a commit or manually as needed.
 
 {{% notice info %}}
 <p style='text-align: left;'>
@@ -27,7 +27,7 @@ It will take a few moments for JFrog Pipelines to sync the pipelines from your n
 ![Pipelines Source Success](/images/PipelinesSourceSuccess.png)
 9. Click on **Logs** on the right to view more details on the sync process.
 ![Pipelines Logs](/images/PipelinesLog.png)
-10. Go back to **Pipelines** ► **My Pipelines** and you will see your added pipelines.
+10. Go back to **Pipelines** ► **My Pipelines**, and you will see your added pipelines.
 ![My Pipelines](/images/MyPipelinesFinal.png)
 
 With your pipelines added, we are now ready to execute the pipelines, initialize our environment and build our artifacts!

@@ -44,7 +44,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
             - popd
 ```
 
-7. Next, we have a [Bash](https://www.jfrog.com/confluence/display/JFROG/Bash) step, _npm\_compile_. [Bash](https://www.jfrog.com/confluence/display/JFROG/Bash)  steps are very powerful, because they allows you to execute practically any commands. The purpose of this step is to compile our NPM package. In this step, we do the following in _onStart_:
+7. Next, we have a [Bash](https://www.jfrog.com/confluence/display/JFROG/Bash) step, _npm\_compile_. [Bash](https://www.jfrog.com/confluence/display/JFROG/Bash)  steps are very powerful, because they allow you to execute practically any commands. The purpose of this step is to compile our NPM package. In this step, we do the following in _onStart_:
 
     - [restore_run_files](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions#PipelinesUtilityFunctions-restore_run_files) is a [Pipeline Utility Function](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions) copies the current run state or context to a location to compile.
     - _npm install_ installs our packages.
@@ -89,7 +89,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
 
 10. Close the **VIEW YAML** window.
 11. Click on the first step and further click on the trigger step icon to execute this pipeline. It will take several minutes for this pipeline to run (~10 minutes).
-![Tigger Npm Pipeline](/images/TriggerNpmPipeline.png)
+![Trigger Npm Pipeline](/images/TriggerNpmPipeline.png)
 12. When the run is finished successfully, switch to the Builds view in Artifactory. Go to **Artifactory** ► **Builds**.
 13. Click on **npm_build** in the list.
 14. Then click on your most recent build.

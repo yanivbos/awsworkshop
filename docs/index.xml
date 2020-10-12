@@ -81,7 +81,7 @@ Artifactory offers a universal solution supporting all major package formats inc
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/40_configure_pipeline_source.html</guid>
-      <description>In these next steps, we will add the previous pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to executes these pipelines automatically whenever there is a commit or manually as needed.
+      <description>In these next steps, we will add the previous pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to execute these pipelines automatically whenever there is a commit or manually as needed.
 A Pipeline Source represents a source control repository (such as GitHub or BitBucket) where Pipelines definition files can be found. A pipeline source connects to the repository through an integration.   In your JFrog Platform instance, go to Pipelines ► Pipeline Sources.</description>
     </item>
     
@@ -119,7 +119,7 @@ This pipeline initializes the JFrog Platform for the next build pipelines by cre
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/80_conclusion.html</guid>
-      <description>In this workshop, we demonstrated using the JFrog Platform to create CI/CD pipelines to build an application, manage the artifacts, scan the artifacts for security vulnerabilities and license compliance, and publish the artifacts to a staging repository. Now that you have some basic understanding of the JFrog Platform, we encourage you to use it with your existing build tools, like Maven, Gradle, Ivy and Ant and work with packaging systems of other development platforms, like NuGet, RubyGems or NPM.</description>
+      <description>In this workshop, we demonstrated using the JFrog Platform to create CI/CD pipelines to build an application, manage the artifacts, scan the artifacts for security vulnerabilities and license compliance, and publish the artifacts to a staging repository. Now you have some basic understanding of the JFrog Platform, we encourage you to use it with your existing build tools, like Maven, Gradle, Ivy and Ant and work with packaging systems of other development platforms, like NuGet, RubyGems or NPM.</description>
     </item>
     
   </channel>

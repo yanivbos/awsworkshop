@@ -142,8 +142,8 @@ configuration:
 ```
 
 12. Close the **VIEW YAML** window.
-13. Click on the first step and further click on the trigger step icon to execute this pipeline. A run will appear and it will take a few moments for JFrog Pipelines to allocate resources to execute the pipeline. It will take several minutes for this pipeline to run (~10 minutes).
-![Tigger Gradle Pipeline](/images/TriggerGradlePipeline.png)
+13. Click on the first step and further click on the trigger step icon to execute this pipeline. A run will appear, and it will take a few moments for JFrog Pipelines to allocate resources to execute the pipeline. It will take several minutes for this pipeline to run (~10 minutes).
+![Trigger Gradle Pipeline](/images/TriggerGradlePipeline.png)
 14. Click on the active run to view the progress of the pipeline.
 ![Gradle Build Runs](/images/gradle-build-runs.png)
 15. Use the pulldown to select the various steps and view the logs for each step.
