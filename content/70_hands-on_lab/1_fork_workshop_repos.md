@@ -7,7 +7,7 @@ weight = 1
 
 To get started, you will need to fork two GitHub repositories. These repositories contain the files that are needed for the lab.
 
-- https://github.com/shimib/Horae - Contains our JFrog pipelines for configuring our Artifactory server and building our Java webapp and NPM user interface.
+- https://github.com/shimib/Hoare - Contains our JFrog pipelines for configuring our Artifactory server and building our Java webapp and NPM user interface.
 
 - https://github.com/shimib/project-examples - Contains our webapp code which consists of the Java webapp and NPM user interface.
 
@@ -16,7 +16,7 @@ To get started, you will need to fork two GitHub repositories. These repositorie
 3. In your terminal, clone each of the new forks to your local git directory.
 
 ```
-$ git clone https://github.com/[username]/Horae.git
+$ git clone https://github.com/[username]/Hoare.git
 ```
 
 ```
