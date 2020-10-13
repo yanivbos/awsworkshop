@@ -7,11 +7,23 @@
   </url>
   
   <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/self_paced/account.html</loc>
+  </url>
+  
+  <url>
     <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_workshop_repos.html</loc>
   </url>
   
   <url>
     <loc>https://jefferyfry.github.io/awsworkshop/</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/start_workshop.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/aws_event.html</loc>
   </url>
   
   <url>
@@ -24,6 +36,26 @@
   
   <url>
     <loc>https://jefferyfry.github.io/awsworkshop/10_prerequisites.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/self_paced.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/10_cloud9.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/30_iamrole.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/40_workspaceiam.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/45_cloud.html</loc>
   </url>
   
   <url>
@@ -48,6 +80,10 @@
   
   <url>
     <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/50_execute_initialization_pipeline.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup.html</loc>
   </url>
   
   <url>

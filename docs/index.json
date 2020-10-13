@@ -7,6 +7,13 @@
 	"content": "Continuous integration and delivery (CI/CD) is the process for which your software components are built from code, integrated, tested, released, deployed and ultimately delivered to end-users. CI/CD pipelines are the software assembly line that orchestrates the building of your software. This CI/CD pipeline line requires infrastructure. Cloud computing has allowed this infrastructure to become dynamic and ephemeral. On cloud infrastructure, your CI/CD pipelines scale up and down to meet your software delivery demands. But at the same time, it saves costs by providing the right amount of cloud infrastructure just as it is needed. This is further realized by using cloud-native technologies like Kubernetes and extending across clouds and on-premise datacenters. The following are some AWS cloud technologies that CI/CD pipelines can utilize:\n EC2 instances can be used as CI/CD pipeline nodes that can be dynamically spun up and down to execute pipeline tasks. EC2 spot instances can dramatically lower costs by utilizing spare capacity nodes for pipeline tasks. EKS can provide a Kubernetes-based node pool and allow more efficient use of compute resources. AWS Outposts can allow you to span your CI/CD pipelines from your on-premise datacenter to the cloud for hybrid and migration use cases.  "
 },
 {
+	"uri": "https://jefferyfry.github.io/awsworkshop/55_workshop_setup/self_paced/account.html",
+	"title": "Create an AWS account",
+	"tags": [],
+	"description": "",
+	"content": " Your account must have the ability to create new IAM roles and scope other IAM permissions.\n  If you don\u0026rsquo;t already have an AWS account with Administrator access: create one now by clicking here\n Once you have an AWS account, ensure you are following the remaining workshop steps as an IAM user with administrator access to the AWS account: Create a new IAM user to use for the workshop\n Enter the user details:  Attach the AdministratorAccess IAM Policy:  Click to create the new user:  Take note of the login URL and save:   "
+},
+{
 	"uri": "https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_workshop_repos.html",
 	"title": "Fork the Lab Repositories",
 	"tags": [],
@@ -19,6 +26,20 @@
 	"tags": [],
 	"description": "",
 	"content": " DevOps Modernization Workshop Welcome In this workshop you will learn about the JFrog Platform and how to leverage Artifactory, XRay and Pipelines for managing your Software Development Lifecycle (SDLC) and bring DevOps to the cloud on AWS.\nLearning Objectives  Understand the roles of Artifactory, XRay and Pipelines in your software delivery life cycle (SDLC). Use Local, Remote and Virtual Repositories in Artifactory. Publish and promote Build Info. Scan your artifacts and builds for security vulnerabilities.  The examples and sample code provided in this workshop are intended to be consumed as instructional content. These will help you understand how various services can be architected to build a solution while demonstrating best practices along the way. These examples are not intended for use in production environments.  "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/55_workshop_setup/start_workshop.html",
+	"title": "Start the Workshop...",
+	"tags": [],
+	"description": "",
+	"content": " Getting Started To start the workshop, follow one of the following depending on whether you are\u0026hellip;\n \u0026hellip;running the workshop on your own, or \u0026hellip;attending an AWS hosted event  "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/55_workshop_setup/aws_event.html",
+	"title": "At an AWS Event",
+	"tags": [],
+	"description": "",
+	"content": " To complete this workshop, you are provided with an AWS account via the AWS Event Engine service. A 12-digit hash will be provided to you by event staff - this is your unique access code. eg:\ne8476543c00e Create AWS Account 1 . Connect to the portal by clicking the button or browsing to https://dashboard.eventengine.run/. The following screen shows up. Enter the provided hash in the text box. The button on the bottom right corner changes to Accept Terms \u0026amp; Login. Click on that button to continue.\n2 . Choose AWS Console, then Open AWS Console. This account will expire at the end of the workshop and the all the resources created will be automatically deprovisioned. You will not be able to access this account after today.\n3 . Use a single region for the duration of this workshop. This workshop supports the following regions:\n us-west-2 (US West - Oregon)  Please select US West (Oregon) in the top right corner.\nNext step Once you have completed the step above, you can leave the AWS console open. You can now move to the Create a workspace section.\n"
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/50_devops_cloud/10_binary_repository_management.html",
@@ -40,6 +61,41 @@
 	"tags": [],
 	"description": "",
 	"content": "Please set up these items before beginning.\n Access to a JFrog Platform instance with Artifactory, Xray and Pipelines - Get your own JFrog Platform instance with the JFrog Platform Cloud Free Tier in just a few minutes. A GitHub account for accessing and modifying workshop code - Create a GitHub account with these official instructions.  \n"
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/55_workshop_setup/self_paced.html",
+	"title": "...on your own",
+	"tags": [],
+	"description": "",
+	"content": " Running the workshop on your own Only complete this section if you are running the workshop on your own. If you are at an AWS hosted event (such as re:Invent, Kubecon, Immersion Day, etc), go to Start the workshop at an AWS event.\n  Create an AWS account   "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/55_workshop_setup/10_cloud9.html",
+	"title": "Cloud9",
+	"tags": [],
+	"description": "",
+	"content": " AWS Cloud9 is a cloud-based integrated development environment (IDE) that Let’s you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects.\nAdd a new Cloud9 IDE environment 1 . Within the AWS console, use the region drop list to select us-west-2 (Oregon). We are doing this because the workshop script will provsion the resources in this same region.\n2 . Navigate to the cloud9 console or just search for it under the AWS console services menu.\n3 . Click the Create environment button\n4 . For the name use jfrog-workshop\n5 . Select Other instance type and choose t3.medium\n6 . Leave all the other settings as default\nThis will take about 1-2 minutes to provision\n Configure Cloud9 IDE environment When the environment comes up, customize the environment by:\n1 . Close the welcome page tab\n2 . Close the lower work area tab\n3 . Open a new terminal tab in the main work area.\nYour workspace should now look like this and can hide the left hand environment explorer by clicking on the left side environment tab.\nIf you don\u0026rsquo;t like this dark theme, you can change it from the View / Themes Cloud9 workspace menu.\n Cloud9 requires third-party-cookies. You can whitelist the specific domains. You are having issues with this, Ad blockers, javascript disablers, and tracking blockers should be disabled for the cloud9 domain, or connecting to the workspace might be impacted.\n "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/55_workshop_setup/30_iamrole.html",
+	"title": "Create an IAM role for your workspace",
+	"tags": [],
+	"description": "",
+	"content": " Starting from here, when you see command to be entered such as below, you will enter these commands into Cloud9 IDE. You can use the Copy to clipboard feature (right hand upper corner) to simply copy and paste into Cloud9. In order to paste, you can use Ctrl + V for Windows or Command + V for Mac.\n  Follow this deep link to create an IAM role with Administrator access. Confirm that AWS service and EC2 are selected, then click Next to view permissions. Confirm that AdministratorAccess is checked, then click Next to review. Enter Jfrog-Workshop-Admin for the Name, and select Create Role   "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/55_workshop_setup/40_workspaceiam.html",
+	"title": "Attach the IAM role to your Workspace",
+	"tags": [],
+	"description": "",
+	"content": " Follow this deep link to find your Cloud9 EC2 instance Select the instance, then choose Actions / Instance Settings / Attach/Replace IAM Role  Choose Jfrog-Workshop-Admin from the IAM Role drop down, and select Apply   "
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/55_workshop_setup/45_cloud.html",
+	"title": "Update IAM settings for your Workspace",
+	"tags": [],
+	"description": "",
+	"content": " Cloud9 normally manages IAM credentials dynamically. This isn\u0026rsquo;t currently compatible with the EKS IAM authentication, so we will disable it and rely on the IAM role instead.\n  Return to your workspace and click the gear icon (in top right corner), or click to open a new tab and choose \u0026ldquo;Open Preferences\u0026rdquo; Select AWS SETTINGS Turn off AWS managed temporary credentials Close the Preferences tab   Let\u0026rsquo;s run the command below, the following actions will take place as we do that:\n🔹 Install jq- jq is a command-line tool for parsing JSON\n🔹 Ensure temporary credentials aren’t already in place.\n🔹 Remove any existing credentials file.\n🔹 Set the region to work with our desired region.\n🔹 Validate that our IAM role is valid.\nsudo yum -y install jq rm -vf ${HOME}/.aws/credentials export ACCOUNT_ID=$(aws sts get-caller-identity --output text --query Account) export AWS_REGION=$(curl -s 169.254.169.254/latest/dynamic/instance-identity/document | jq -r \u0026#39;.region\u0026#39;) test -n \u0026#34;$AWS_REGION\u0026#34; \u0026amp;\u0026amp; echo AWS_REGION is \u0026#34;$AWS_REGION\u0026#34; || echo AWS_REGION is not set echo \u0026#34;export ACCOUNT_ID=${ACCOUNT_ID}\u0026#34; | tee -a ~/.bash_profile echo \u0026#34;export AWS_REGION=${AWS_REGION}\u0026#34; | tee -a ~/.bash_profile aws configure set default.region ${AWS_REGION} aws configure get default.region aws sts get-caller-identity --query Arn | grep Jfrog-Workshop-Admin -q \u0026amp;\u0026amp; echo \u0026#34;IAM role valid\u0026#34; || echo \u0026#34;IAM role NOT valid\u0026#34; If the IAM role is not valid, DO NOT PROCEED. Go back and confirm the steps on this page.\n"
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/20_configure_artifactory_integration.html",
@@ -82,6 +138,13 @@
 	"tags": [],
 	"description": "",
 	"content": "The first pipeline that we will execute will initialize our environment. This pipeline will create users, groups, permissions, repositories, Xray policies and watches, Xray indexes and access federation. This prepares our JFrog Platform instance to run our gradle and npm build pipelines.\nThis pipeline initializes the JFrog Platform for the next build pipelines by creating the necessary users, repositories, permissions and Xray configuration. It does this by using the JFrog Platform REST APIs. This is another way that you can manage and monitor the JFrog Platform.   Go to Pipelines ► My Pipelines.  Click on the init_environment pipeline in the Pipelines List. Click on the first step and further click on the trigger step icon to execute this pipeline. A run will appear, and it will take a few moments for JFrog Pipelines to allocate resources to execute the pipeline.  If the execution results in an error, click on the run to view the logs. Make any changes to the pipeline or integrations to correct any issues and then execute again.  The run will show a success status when it completes without errors.   We are now ready to build our first artifacts for our application.\n"
+},
+{
+	"uri": "https://jefferyfry.github.io/awsworkshop/55_workshop_setup.html",
+	"title": "Workshop Setup",
+	"tags": [],
+	"description": "",
+	"content": " Workshop Setup  AWS console CLoud9 IDE Environment  Objectives of this section 🔹 Provision AWS Cloud9 IDE environment\n🔹 Run setup scripts to optimize your environment\n"
 },
 {
 	"uri": "https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/60_execute_gradle_build_pipeline.html",
