@@ -32,14 +32,14 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
         configuration:
           npmArgs:   --no-progress --no-audit
           repositoryName: npm-demo
-          sourceLocation: tutorial/step2-create-ui-pkg
+          sourceLocation: workshop-app
           integrations:
             - name: Artifactory
           inputResources:
             - name: gitRepo_code
         execution:
           onStart:
-            - pushd ${res_gitRepo_code_resourcePath}/tutorial/step2-create-ui-pkg
+            - pushd ${res_gitRepo_code_resourcePath}/workshop-app
             - npm version ${Version} --no-git-tag-version
             - popd
 ```
@@ -62,8 +62,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
       onStart:
         - export tempStateLocation="$step_tmp_dir/npmSourceState"
         - restore_run_files npmBuildInputGitRepo $tempStateLocation
-        - pushd $tempStateLocation/tutorial/step2-create-ui-pkg
-        - npm install shelljs
+        - pushd $tempStateLocation/workshop-app
         - npm install
         - add_run_files $tempStateLocation/. npmBuildInputGitRepo
         - popd

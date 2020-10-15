@@ -9,7 +9,7 @@
 
     <link rel="icon" href="https://jefferyfry.github.io/awsworkshop/images/favicon.png" type="image/png">
 
-    <title>Create an IAM role for your workspace :: JFrog Workshop</title>
+    <title>Configure ECS :: JFrog Workshop</title>
 
     
     <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602779785" rel="stylesheet">
@@ -36,7 +36,7 @@
     </style>
     
   </head>
-  <body class="" data-url="https://jefferyfry.github.io/awsworkshop/amp/55_workshop_setup/30_iamrole.html">
+  <body class="" data-url="https://jefferyfry.github.io/awsworkshop/amp/70_hands-on_lab/25_configure_ecs.html">
     <nav id="sidebar" class="showVisitedLinks">
 
 
@@ -204,7 +204,7 @@
   
     
     <li data-nav-id="/55_workshop_setup.html" title="Workshop Setup" class="dd-item 
-        parent
+        
         
         
         ">
@@ -363,7 +363,7 @@
  
   
     
-      <li data-nav-id="/amp/55_workshop_setup/30_iamrole.html" title="Create an IAM role for your workspace" class="dd-item active">
+      <li data-nav-id="/amp/55_workshop_setup/30_iamrole.html" title="Create an IAM role for your workspace" class="dd-item ">
         <a href="https://jefferyfry.github.io/awsworkshop/amp/55_workshop_setup/30_iamrole.html">
         Create an IAM role for your workspace
         <i class="fas fa-check read-icon"></i>
@@ -455,7 +455,7 @@
   
     
     <li data-nav-id="/70_hands-on_lab.html" title="Hands-On Lab" class="dd-item 
-        
+        parent
         
         
         ">
@@ -546,7 +546,7 @@
  
   
     
-      <li data-nav-id="/amp/70_hands-on_lab/25_configure_ecs.html" title="Configure ECS" class="dd-item ">
+      <li data-nav-id="/amp/70_hands-on_lab/25_configure_ecs.html" title="Configure ECS" class="dd-item active">
         <a href="https://jefferyfry.github.io/awsworkshop/amp/70_hands-on_lab/25_configure_ecs.html">
         Configure ECS
         <i class="fas fa-check read-icon"></i>
@@ -801,7 +801,7 @@
             
           
           
-            <a href='https://jefferyfry.github.io/awsworkshop/'>JFrog DevOps Modernization Workshop</a> > <a href='https://jefferyfry.github.io/awsworkshop/55_workshop_setup.html'>Workshop Setup</a> > Create an IAM role for your workspace
+            <a href='https://jefferyfry.github.io/awsworkshop/'>JFrog DevOps Modernization Workshop</a> > <a href='https://jefferyfry.github.io/awsworkshop/70_hands-on_lab.html'>Hands-On Lab</a> > Configure ECS
           
         
           
@@ -830,25 +830,95 @@
           
             <h1>
               
-              Create an IAM role for your workspace
+              Configure ECS
             </h1>
           
 
         
 
 
+<p>In the previous section, we set up JFrog Pipelines to authenticate and publish images to Artifactory. In this section, we will add the same credentials to AWS Secrets Manager and create an ECS IAM role. This will allow Amazon ECS to pull the image from Artifactory and deploy it.</p>
 
-<div class="notices info" ><p>Starting from here, when you see command to be entered such as below, you will enter these commands into Cloud9 IDE. You can use the <strong>Copy to clipboard</strong> feature (right hand upper corner) to simply copy and paste into Cloud9. In order to paste, you can use Ctrl + V for Windows or Command + V for Mac.</p>
+
+<div class="notices info" ><p style='text-align: left;'>
+Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition. This allows your ECS tasks to use images from private repositories. 
+</p>
 </div>
 
 
 <ol>
-<li>Follow <a href="https://console.aws.amazon.com/iam/home#/roles$new?step=review&amp;commonUseCase=EC2%2BEC2&amp;selectedUseCase=EC2&amp;policies=arn:aws:iam::aws:policy%2FAdministratorAccess" target="_blank">this deep link to create an IAM role with Administrator access.</a></li>
-<li>Confirm that <strong>AWS service</strong> and <strong>EC2</strong> are selected, then click <strong>Next</strong> to view permissions.</li>
-<li>Confirm that <strong>AdministratorAccess</strong> is checked, then click <strong>Next</strong> to review.</li>
-<li>Enter <code>Jfrog-Workshop-Admin</code> for the Name, and select <strong>Create Role</strong>
-<img src="https://jefferyfry.github.io/awsworkshop/images/createrole.png" alt="createrole" /></li>
+<li>Go to your <a href="https://console.aws.amazon.com/secretsmanager/" target="_blank">AWS Secrets Manager Console</a>.</li>
+<li>Click on <strong>Store a new secret</strong>.</li>
+<li>Select <strong>Other type of secrets</strong>.</li>
+<li>Select the <strong>Plaintext</strong> format.</li>
+
+<li><p>And paste your Artifactory username and API Key.</p>
+<pre><code>{
+&#34;username&#34; : &#34;&lt;username&gt;&#34;,
+&#34;password&#34; : &#34;&lt;password&gt;&#34;
+}</code></pre></li>
+
+<li><p>Click <strong>Next</strong>.</p></li>
+
+<li><p>For <strong>Secret name</strong>, use <em>awsworkshop/jfrog-npm-app</em>.</p></li>
+
+<li><p>Click <strong>Next</strong>.</p></li>
+
+<li><p>Leave the default settings on this next <strong>Configure automatic rotation</strong> page and click <strong>Next</strong>.</p></li>
+
+<li><p>On the <strong>Sample code</strong> page, click <strong>Store</strong>. You should now see your <em>awsworkshop/jfrog-npm-app</em> secrets listed.
+<img src="https://jefferyfry.github.io/awsworkshop/images/aws-secrets.png" alt="AWS Secrets" /></p></li>
+
+<li><p>Click on your new secret <em>awsworkshop/jfrog-npm-app</em>.</p></li>
+
+<li><p>Copy the <strong>Secret ARN</strong>.
+<img src="https://jefferyfry.github.io/awsworkshop/images/secret-arn.png" alt="Secret ARN" /></p></li>
+
+<li><p>Next we must create an IAM role that allows ECS to access these credentials. Go to <a href="https://us-east-1.console.aws.amazon.com/iam/home?#/roles" target="_blank">IAM Roles</a>.</p></li>
+
+<li><p>Click on <strong>Create role</strong>.</p></li>
+
+<li><p>Select the <strong>Elastic Container Service</strong> service and use case.</p></li>
+
+<li><p>Click through the next steps and then create the role with the name <em>ecsWorkshop</em>.</p></li>
+
+<li><p>Now click on the <em>ecsWorkshop</em> role in the roles list.
+<img src="https://jefferyfry.github.io/awsworkshop/images/iam-role.png" alt="IAM Role" /></p></li>
+
+<li><p>Click on <strong>Attach policies</strong> and attach the <strong>AmazonECSTaskExecutionRolePolicy</strong> policy.</p></li>
+
+<li><p>On the right, click on <strong>Add inline policy</strong>.</p></li>
+
+<li><p>Click on the <strong>JSON</strong> tab and paste the following.</p>
+<pre><code>{
+&#34;Version&#34;: &#34;2012-10-17&#34;,
+&#34;Statement&#34;: [
+{
+  &#34;Effect&#34;: &#34;Allow&#34;,
+  &#34;Action&#34;: [
+    &#34;kms:Decrypt&#34;,
+    &#34;secretsmanager:GetSecretValue&#34;
+  ],
+  &#34;Resource&#34;: [
+    &#34;&lt;Secret ARN&gt;&#34;,
+    &#34;arn:aws:kms:&lt;region&gt;:&lt;aws_account_id&gt;:key/key_id&#34;     
+  ]
+}
+]
+}</code></pre></li>
+
+<li><p>Substitute your <strong>Secret ARN</strong> from above.</p></li>
+
+<li><p>Also substitute your &lt;region&gt; and &lt;aws_account_id&gt;. You can derive this from the <strong>Secret ARN</strong> format.</p>
+<pre><code>arn:aws:secretsmanager:&lt;region&gt;:&lt;aws_account_id&gt;: secret:secret_name</code></pre></li>
+
+<li><p>Click on <strong>Review policy</strong>.</p></li>
+
+<li><p>Name the policy <em>ecsAccessToSecrets</em> and create the policy.
+<img src="https://jefferyfry.github.io/awsworkshop/images/inline-policy.png" alt="Inline Policy" /></p></li>
 </ol>
+
+<p>You have now created an IAM role that will allow ECS images from Artifactory.</p>
 
 
 <footer class="footline">
@@ -1064,90 +1134,6 @@
             
                 
                     
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
                 
                 
 
@@ -1207,10 +1193,94 @@
             
         
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
                     
                 
                 
@@ -1347,10 +1417,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="https://jefferyfry.github.io/awsworkshop/amp/55_workshop_setup/10_cloud9.html" title="Cloud9"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="https://jefferyfry.github.io/awsworkshop/amp/70_hands-on_lab/20_configure_artifactory_integration.html" title="Configure the Artifactory Integration"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/amp/55_workshop_setup/40_workspaceiam.html" title="Attach the IAM role to your Workspace" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="https://jefferyfry.github.io/awsworkshop/amp/70_hands-on_lab/30_configure_initialization_pipeline.html" title="Configure the Initialization Pipeline" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

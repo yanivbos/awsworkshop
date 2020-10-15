@@ -11,14 +11,14 @@ pipelines:
         configuration:
           npmArgs:   --no-progress --no-audit
           repositoryName: npm-demo
-          sourceLocation: tutorial/step2-create-ui-pkg
+          sourceLocation: workshop-app
           integrations:
             - name: Artifactory
           inputResources:
             - name: gitRepo_code
         execution:
           onStart:
-            - pushd ${res_gitRepo_code_resourcePath}/tutorial/step2-create-ui-pkg
+            - pushd ${res_gitRepo_code_resourcePath}/workshop-app
             - npm version ${Version} --no-git-tag-version
             - popd
 
@@ -34,8 +34,7 @@ pipelines:
             - export tempStateLocation="$step_tmp_dir/npmSourceState"
             # Restore file from previous step to current step
             - restore_run_files npmBuildInputGitRepo $tempStateLocation
-            - pushd $tempStateLocation/tutorial/step2-create-ui-pkg
-            - npm install shelljs
+            - pushd $tempStateLocation/workshop-app
             - npm install 
             # Add files to npm pipeline target
             - add_run_files $tempStateLocation/. npmBuildInputGitRepo
@@ -57,7 +56,7 @@ pipelines:
         type: DockerBuild
         configuration:
           affinityGroup: bldGroup
-          dockerFileLocation: tutorial/step2-create-ui-pkg
+          dockerFileLocation: workshop-app
           dockerFileName: Dockerfile
           dockerImageName: ${Fullimagename}  
           dockerImageTag: ${Version}
@@ -69,7 +68,7 @@ pipelines:
             - name: Artifactory
         execution:
           onStart:
-            - pushd ${res_gitRepo_code_resourcePath}/tutorial/step2-create-ui-pkg
+            - pushd ${res_gitRepo_code_resourcePath}/workshop-app
             # Creating a Folder for the fileSpec Target
             - mkdir -p npm_results
             - popd

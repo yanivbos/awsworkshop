@@ -27,15 +27,14 @@
     </item>
     
     <item>
-      <title>Fork the Lab Repositories</title>
-      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_workshop_repos.html</link>
+      <title>Fork the Lab Repository</title>
+      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_lab_repo.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_workshop_repos.html</guid>
-      <description>To get started, you will need to fork two GitHub repositories. These repositories contain the files that are needed for the lab.
- https://github.com/shimib/Hoare - Contains our JFrog pipelines for configuring our Artifactory server and building our Java webapp and NPM user interface.
- https://github.com/shimib/project-examples - Contains our webapp code which consists of the Java webapp and NPM user interface.
-   Navigate to each of these repositories GitHub using the links above and fork them to your account.</description>
+      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_lab_repo.html</guid>
+      <description>To get started, you will need to fork this workshop repository. It contains the files, scripts and configurations that are required to complete the hands-on lab.
+ Navigate to https://github.com/jefferyfry/awsworkshop. In the top-right corner of the GitHub repository page, click Fork. Wait for GitHub to complete the forking process. In your Cloud9 terminal, clone the new fork to your local git directory.
+$ git clone https://github.com/[username]/awsworkshop.git  In the next sections, you will make changes to your new repository.</description>
     </item>
     
     <item>
@@ -63,8 +62,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/10_configure_github_integration.html</guid>
-      <description>In order for JFrog Pipelines, to get access to the code in your new repositories, we must first set up a Pipelines GitHub integration. This allows Pipelines to authenticate and get access to your GitHub repositories. To do this, we create a GitHub Personal Access Token with the correct permissions.
- Go to your GitHub Personal Access Tokens settings page. Click on Generate new token. Provide a name for the token.</description>
+      <description>In order for JFrog Pipelines to get access to the code in your awsworkshop repository, we must first set up a Pipelines GitHub integration. This allows Pipelines to authenticate and get access to your GitHub repositories. To do this, we create a GitHub Personal Access Token with the correct permissions.
+JFrog Pipelines can also integrate with other source code repositories such as GitHub Enterprise, BitBucket and GitLab.   Go to your GitHub Personal Access Tokens settings page.</description>
     </item>
     
     <item>
@@ -135,13 +134,23 @@ Artifactory offers a universal solution supporting all major package formats inc
     </item>
     
     <item>
+      <title>Configure ECS</title>
+      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/25_configure_ecs.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/25_configure_ecs.html</guid>
+      <description>In the previous section, we set up JFrog Pipelines to authenticate and publish images to Artifactory. In this section, we will add the same credentials to AWS Secrets Manager and create an ECS IAM role. This will allow Amazon ECS to pull the image from Artifactory and deploy it.
+Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition.</description>
+    </item>
+    
+    <item>
       <title>Configure the Initialization Pipeline</title>
       <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/30_configure_initialization_pipeline.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/30_configure_initialization_pipeline.html</guid>
-      <description>Next, we will update the lab pipelines to add your new GitHub and Artifactory integrations. In previous steps, you forked and cloned the lab repositories. We will modify the initialization pipeline in your forked Hoare repository to add these integrations.
- In your local git directory, open Hoare/pipelines/base_init.yml in an editor. Update the resources section of the file to use your forked repositories. Change the path to use your username.</description>
+      <description>Next, we will update the lab pipelines to add your new GitHub and Artifactory integrations. In previous steps, you [forked and cloned the lab repository.]() We will modify the initialization pipeline in your forked Hoare repository to add these integrations.
+ In your local git directory, open awsworkshop/jfrog_pipelines/init-jfrog.yml in an editor. Update the resources section of the file to use your new forked repository. Change the path to use your username.</description>
     </item>
     
     <item>
@@ -150,7 +159,7 @@ Artifactory offers a universal solution supporting all major package formats inc
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/40_configure_pipeline_source.html</guid>
-      <description>In these next steps, we will add the previous pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to execute these pipelines automatically whenever there is a commit or manually as needed.
+      <description>In these next steps, we will add the build pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to execute these pipelines automatically whenever there is a commit or manually as needed.
 A Pipeline Source represents a source control repository (such as GitHub or BitBucket) where Pipelines definition files can be found. A pipeline source connects to the repository through an integration.   In your JFrog Platform instance, go to Pipelines ► Pipeline Sources.</description>
     </item>
     

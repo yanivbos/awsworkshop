@@ -12,21 +12,21 @@
     <title>Execute the NPM Build Pipeline :: JFrog Workshop</title>
 
     
-    <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602697873" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/fontawesome-all.min.css?1602697873" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/hybrid.css?1602697873" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/featherlight.min.css?1602697873" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/perfect-scrollbar.min.css?1602697873" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/auto-complete.css?1602697873" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/atom-one-dark-reasonable.css?1602697873" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/theme.css?1602697873" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/hugo-theme.css?1602697873" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1602779785" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/fontawesome-all.min.css?1602779785" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/hybrid.css?1602779785" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/featherlight.min.css?1602779785" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/perfect-scrollbar.min.css?1602779785" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/auto-complete.css?1602779785" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/atom-one-dark-reasonable.css?1602779785" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/theme.css?1602779785" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/hugo-theme.css?1602779785" rel="stylesheet">
     
-    <link href="https://jefferyfry.github.io/awsworkshop/css/theme-mine.css?1602697873" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/theme-mine.css?1602779785" rel="stylesheet">
     
     
 
-    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery-3.3.1.min.js?1602697873"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery-3.3.1.min.js?1602779785"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/lunr.min.js?1602697873"></script>
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/auto-complete.js?1602697873"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/lunr.min.js?1602779785"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/auto-complete.js?1602779785"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jefferyfry.github.io\/awsworkshop\/";
     
 </script>
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/search.js?1602697873"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/search.js?1602779785"></script>
 
     
   </div>
@@ -483,9 +483,9 @@
  
   
     
-      <li data-nav-id="/70_hands-on_lab/1_fork_workshop_repos.html" title="Fork the Lab Repositories" class="dd-item ">
-        <a href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_workshop_repos.html">
-        Fork the Lab Repositories
+      <li data-nav-id="/70_hands-on_lab/1_fork_lab_repo.html" title="Fork the Lab Repository" class="dd-item ">
+        <a href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_lab_repo.html">
+        Fork the Lab Repository
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -528,6 +528,27 @@
       <li data-nav-id="/70_hands-on_lab/20_configure_artifactory_integration.html" title="Configure the Artifactory Integration" class="dd-item ">
         <a href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/20_configure_artifactory_integration.html">
         Configure the Artifactory Integration
+        <i class="fas fa-check read-icon"></i>
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/70_hands-on_lab/25_configure_ecs.html" title="Configure ECS" class="dd-item ">
+        <a href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/25_configure_ecs.html">
+        Configure ECS
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -848,14 +869,14 @@ type: NpmBuild
 configuration:
   npmArgs:   --no-progress --no-audit
   repositoryName: npm-demo
-  sourceLocation: tutorial/step2-create-ui-pkg
+  sourceLocation: workshop-app
   integrations:
     - name: Artifactory
   inputResources:
     - name: gitRepo_code
 execution:
   onStart:
-    - pushd ${res_gitRepo_code_resourcePath}/tutorial/step2-create-ui-pkg
+    - pushd ${res_gitRepo_code_resourcePath}/workshop-app
     - npm version ${Version} --no-git-tag-version
     - popd</code></pre></li>
 </ul></li>
@@ -878,7 +899,7 @@ execution:
 onStart:
 - export tempStateLocation=&#34;$step_tmp_dir/npmSourceState&#34;
 - restore_run_files npmBuildInputGitRepo $tempStateLocation
-- pushd $tempStateLocation/tutorial/step2-create-ui-pkg
+- pushd $tempStateLocation/workshop-app
 - npm install shelljs
 - npm install
 - add_run_files $tempStateLocation/. npmBuildInputGitRepo
@@ -1327,6 +1348,22 @@ execution:
             
                 
                     
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -1415,19 +1452,19 @@ execution:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/clipboard.min.js?1602697873"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.min.js?1602697873"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.jquery.min.js?1602697873"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery.sticky.js?1602697873"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/featherlight.min.js?1602697873"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/highlight.pack.js?1602697873"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/clipboard.min.js?1602779785"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.min.js?1602779785"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.jquery.min.js?1602779785"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery.sticky.js?1602779785"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/featherlight.min.js?1602779785"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/highlight.pack.js?1602779785"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/modernizr.custom-3.6.0.js?1602697873"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/learn.js?1602697873"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/hugo-learn.js?1602697873"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/modernizr.custom-3.6.0.js?1602779785"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/learn.js?1602779785"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/hugo-learn.js?1602779785"></script>
     
         
-            <script src="https://jefferyfry.github.io/awsworkshop/mermaid/mermaid.js?1602697873"></script>
+            <script src="https://jefferyfry.github.io/awsworkshop/mermaid/mermaid.js?1602779785"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

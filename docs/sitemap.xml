@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_workshop_repos.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/1_fork_lab_repo.html</loc>
   </url>
   
   <url>
@@ -72,6 +72,10 @@
   
   <url>
     <loc>https://jefferyfry.github.io/awsworkshop/20_jfrog_platform_overview.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/25_configure_ecs.html</loc>
   </url>
   
   <url>
