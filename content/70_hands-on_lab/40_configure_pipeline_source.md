@@ -4,7 +4,7 @@ chapter: false
 weight: 40
 ---
 
-In these next steps, we will add the previous pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to execute these pipelines automatically whenever there is a commit or manually as needed.
+In these next steps, we will add the build pipelines as a JFrog Pipelines source. This will allow JFrog Pipelines to execute these pipelines automatically whenever there is a commit or manually as needed.
 
 {{% notice info %}}
 <p style='text-align: left;'>
@@ -19,7 +19,7 @@ A Pipeline Source represents a source control repository (such as GitHub or BitB
 4. For the **Integration** choose the GitHub Integration that you created previously named _GitHub_.
 5. For the **Repository Full Name**, specify your Hoare repository name in the form _[username]/Hoare_.
 6. Leave the **Branch** as _master_.
-7. For the **Pipeline Config Filter**, specify pipelines/base_.*yml.
+7. For the **Pipeline Config Filter**, specify jfrog_pipelines/.*yml.
 8. Click **Create**.
 ![PipelineSource](/images/AddPipelineSource.png)
 

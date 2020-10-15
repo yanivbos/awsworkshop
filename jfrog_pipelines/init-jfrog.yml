@@ -1,5 +1,5 @@
 resources:
-  - name: demo_gitRepo
+  - name: gitRepo_code
     type: GitRepo
     configuration:
       path: jefferyfry/awsworkshop

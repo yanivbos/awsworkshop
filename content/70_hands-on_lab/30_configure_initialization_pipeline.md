@@ -14,15 +14,8 @@ resources:
   - name: demo_gitRepo  
     type: GitRepo  
     configuration:  
-      path: [your_Github_username]/Hoare  <<<--- CHANGE HERE
+      path: [your_Github_username]/awsworkshop  <<<--- CHANGE HERE
       gitProvider: GitHub  
-  - name: gitRepo_code  
-    type: GitRepo  
-    configuration:  
-      path: [your_Github_username]/project-examples  <<<--- CHANGE HERE 
-      gitProvider: GitHub
-      branches:  
-        include: eplus-v2-orbitera 
 ```
 
 3. Save your changes.
@@ -31,9 +24,9 @@ resources:
 
 ```
 $ git add .
-$ git commit -m 'Updated repository paths.'
+$ git commit -m 'Updated repository path.'
 $ git push
 ```
-5. Go to https://github.com/[username]/Hoare/blob/master/pipelines/base_init.yml and verify your changes were made and pushed to your GitHub repository.
+5. Go to https://github.com/[username]/awsworkshop/blob/master/jfrog_pipelines/init-jfrog.yml and verify that your changes were made and pushed to your GitHub repository.
 
 We are now ready to add and execute your pipelines with JFrog Pipelines.
