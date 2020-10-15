@@ -9,7 +9,7 @@ pipelines:
       - name: npm_prep
         type: NpmBuild
         configuration:
-          npmArgs:   --no-progress --no-audit
+          npmArgs:   --no-audit
           repositoryName: npm-demo
           sourceLocation: workshop-app
           integrations:
