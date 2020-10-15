@@ -4,7 +4,13 @@ chapter: false
 weight: 10
 ---
 
-In order for JFrog Pipelines, to get access to the code in your new repositories, we must first set up a Pipelines GitHub integration. This allows Pipelines to authenticate and get access to your GitHub repositories. To do this, we create a GitHub Personal Access Token with the correct permissions.
+In order for JFrog Pipelines to get access to the code in your awsworkshop repository, we must first set up a Pipelines GitHub integration. This allows Pipelines to authenticate and get access to your GitHub repositories. To do this, we create a GitHub Personal Access Token with the correct permissions.
+
+{{% notice info %}}
+<p style='text-align: left;'>
+JFrog Pipelines can also integrate with other source code repositories such as GitHub Enterprise, BitBucket and GitLab.
+</p>
+{{% /notice %}}
 
 1. Go to your [GitHub Personal Access Tokens settings page](https://github.com/settings/tokens).
 2. Click on **Generate new token**.
