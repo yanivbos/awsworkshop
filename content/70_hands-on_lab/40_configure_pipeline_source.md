@@ -17,9 +17,9 @@ A Pipeline Source represents a source control repository (such as GitHub or BitB
 2. Click on **Add Pipeline Source**.
 3. Choose **Single Branch**. This is for repositories that only have one branch like _master_.
 4. For the **Integration** choose the GitHub Integration that you created previously named _GitHub_.
-5. For the **Repository Full Name**, specify your Horae repository name in the form _[username]/Horae_.
+5. For the **Repository Full Name**, specify your Hoare repository name in the form _[username]/Hoare_.
 6. Leave the **Branch** as _master_.
-7. For the **Pipeline Config Filter**, specify pipelines/base__.*yml.
+7. For the **Pipeline Config Filter**, specify pipelines/base_.*yml.
 8. Click **Create**.
 ![PipelineSource](/images/AddPipelineSource.png)
 

@@ -591,17 +591,17 @@
         
 
 
-<p>Next, we will update the lab pipelines to add your new GitHub and Artifactory integrations. In previous steps, you <a href="70_jfrog_devops_hands-on_lab/1_fork_workshop_repos.html" target="_blank">forked and cloned the lab repositories.</a> We will modify the initialization pipeline in your forked Horae repository to add these integrations.</p>
+<p>Next, we will update the lab pipelines to add your new GitHub and Artifactory integrations. In previous steps, you <a href="70_jfrog_devops_hands-on_lab/1_fork_workshop_repos.html" target="_blank">forked and cloned the lab repositories.</a> We will modify the initialization pipeline in your forked Hoare repository to add these integrations.</p>
 
 <ol>
-<li>In your local git directory, open Horae/pipelines/base_init.yml in an editor.</li>
+<li>In your local git directory, open Hoare/pipelines/base_init.yml in an editor.</li>
 
 <li><p>Update the resources section of the file to use your forked repositories. Change the <em>path</em> to use your username.</p>
 <pre><code>resources:  
 - name: demo_gitRepo  
 type: GitRepo  
 configuration:  
-  path: [your_Github_username]/Horae  &lt;&lt;&lt;--- CHANGE HERE
+  path: [your_Github_username]/Hoare  &lt;&lt;&lt;--- CHANGE HERE
   gitProvider: GitHub  
 - name: gitRepo_code  
 type: GitRepo  
@@ -618,7 +618,7 @@ configuration:
 $ git commit -m &#39;Updated repository paths.&#39;
 $ git push</code></pre></li>
 
-<li><p>Go to <a href="https://github.com/[username]/Horae/blob/master/pipelines/base_init.yml" target="_blank">https://github.com/[username]/Horae/blob/master/pipelines/base_init.yml</a> and verify your changes were made and pushed to your GitHub repository.</p></li>
+<li><p>Go to <a href="https://github.com/[username]/Hoare/blob/master/pipelines/base_init.yml" target="_blank">https://github.com/[username]/Hoare/blob/master/pipelines/base_init.yml</a> and verify your changes were made and pushed to your GitHub repository.</p></li>
 </ol>
 
 <p>We are now ready to add and execute your pipelines with JFrog Pipelines.</p>

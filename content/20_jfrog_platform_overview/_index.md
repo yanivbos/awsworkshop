@@ -1,7 +1,7 @@
 +++
 title = "JFrog Platform Overview"
 chapter = false
-weight = 60
+weight = 20
 +++
 
 The JFrog Platform is designed to meet the growing needs of companies to develop and distribute software in the cloud. It provides DevOps with the tools needed to create, manage, secure and deploy software with ease. These tools cover everything from CI/CD orchestration, binary management, artifact maturity, security and vulnerability protection, release management, analytics and distribution.

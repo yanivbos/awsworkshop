@@ -1,7 +1,7 @@
 +++
 title = "DevOps in the Cloud"
 chapter = false
-weight = 50
+weight = 10
 +++
 
 ![Cloud Devops](/images/cloud-devops.jpg)

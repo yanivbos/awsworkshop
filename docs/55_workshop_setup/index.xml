@@ -55,5 +55,14 @@ Add a new Cloud9 IDE environment 1 .</description>
   Return to your workspace and click the gear icon (in top right corner), or click to open a new tab and choose &amp;ldquo;Open Preferences&amp;rdquo; Select AWS SETTINGS Turn off AWS managed temporary credentials Close the Preferences tab   Let&amp;rsquo;s run the command below, the following actions will take place as we do that:</description>
     </item>
     
+    <item>
+      <title>Get a Free JFrog Platform Instance</title>
+      <link>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/55_jfrog_free.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/55_jfrog_free.html</guid>
+      <description>Use the JFrog Platform Cloud Free Tier to get your own JFrog Platform instance with Artifactory, Xray and Pipelines.</description>
+    </item>
+    
   </channel>
 </rss>

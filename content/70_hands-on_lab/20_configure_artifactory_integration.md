@@ -27,6 +27,12 @@ Artifactory offers a universal solution supporting all major package formats inc
 ![Artifactory Integration](/images/AddArtifactoryIntegration.png)
 10. Click **Create**.
 
+{{% notice tip %}}
+<p style='text-align: left;'>
+Remember this Artifactory username and API Key. We will use it again on the next step to set up ECS to deploy our image.
+</p>
+{{% /notice %}}
+
 You have created an Artifactory Integration that allows JFrog Pipelines to access your Artifactory repositories. At this point, you should see the Artifactory and the GitHub Integrations in the Integrations list.
 
 ![Integrations List](/images/IntegrationsFinal.png)
