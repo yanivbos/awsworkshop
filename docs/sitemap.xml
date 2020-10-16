@@ -95,19 +95,11 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/60_execute_gradle_build_pipeline.html</loc>
-  </url>
-  
-  <url>
     <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/70_execute_npm_build_pipeline.html</loc>
   </url>
   
   <url>
     <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/80_deploy_to_ecs.html</loc>
   </url>
   
   <url>

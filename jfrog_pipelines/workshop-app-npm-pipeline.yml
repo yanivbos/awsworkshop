@@ -17,35 +17,32 @@ pipelines:
           inputResources:
             - name: gitRepo_code
 
-      - name: npm_compile
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: npm_prep
-          integrations:
-            - name: Artifactory
-        execution:
-          onStart:
-            - export tempStateLocation="$step_tmp_dir/npmSourceState"
-            # Restore file from previous step to current step
-            - restore_run_files npmBuildInputGitRepo $tempStateLocation
-            - pushd $tempStateLocation/workshop-app
-            - npm install 
-            # Add files to npm pipeline target
-            - add_run_files $tempStateLocation/. npmBuildInputGitRepo
-            - popd
+#      - name: npm_compile
+#        type: Bash
+#        configuration:
+#          inputSteps:
+#            - name: npm_prep
+#          integrations:
+#            - name: Artifactory
+#        execution:
+#          onStart:
+#            - export tempStateLocation="$step_tmp_dir/npmSourceState"
+#            # Restore file from previous step to current step
+#            - restore_run_files npmBuildInputGitRepo $tempStateLocation
+#            - pushd $tempStateLocation/workshop-app
+#            - npm run-script build
+#            # Add files to npm pipeline target
+#            - add_run_files $tempStateLocation/. npmBuildInputGitRepo
+#            - popd
   
       - name: npm_publish
         type: NpmPublish
         configuration:
-          repositoryName:       npm-demo
+          repositoryName: npm-demo
           integrations:
             - name: Artifactory
           inputSteps:
             - name: npm_compile
-        execution:
-          onStart:
-            - export inputNpmBuildStepName="npm_prep"
 
       - name: npm_docker_build
         type: DockerBuild
@@ -72,7 +69,7 @@ pipelines:
           onSuccess:
             - echo "Congrats The Docker image was build"
 
-      - name: Npm_docker_push
+      - name: npm_docker_push
         type: DockerPush
         configuration:
           affinityGroup: bldGroup

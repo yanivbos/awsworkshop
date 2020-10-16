@@ -78,30 +78,12 @@ This pipeline initializes the JFrog Platform for the next build pipelines by cre
     </item>
     
     <item>
-      <title>Execute the Gradle Build Pipeline</title>
-      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/60_execute_gradle_build_pipeline.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/60_execute_gradle_build_pipeline.html</guid>
-      <description>Our first build pipeline is a Gradle pipeline that builds our Java web app. This pipeline uses a GradleBuild native Pipelines step to compile and build the code. DockerBuild and DockerPush native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the XrayScan native step. Then it pushes the produced artifacts to the staging repository in Artifactory along with all build information by using the PromoteBuild native step.</description>
-    </item>
-    
-    <item>
       <title>Execute the NPM Build Pipeline</title>
       <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/70_execute_npm_build_pipeline.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/70_execute_npm_build_pipeline.html</guid>
-      <description>Our second build pipeline is a NPM pipeline that builds our user interface that connects to our previously built Gradle Java webapp. This pipeline uses a NpmBuild native Pipelines step build the user interface components. Then it uses a generic Bash step to package the components. Next, it uses NpmBuild to publish the components. Finally, similar to the Gradle build, DockerBuild, DockerPush, XrayScan and PromoteBuild are used to promote a final docker image to the staging repository.</description>
-    </item>
-    
-    <item>
-      <title>Deploy to ECS</title>
-      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/80_deploy_to_ecs.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/80_deploy_to_ecs.html</guid>
-      <description>Now that we have built our NPM app and published our final Docker image to Artifactory, we are going to deploy the image to ECS and view the UI.</description>
+      <description>The npm_build pipeline builds our web application. This pipeline uses a NpmBuild native Pipelines step build the user interface components. Then it uses a generic Bash step to package the components. Next, it uses NpmBuild to publish the components. DockerBuild and DockerPush native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the XrayScan native step. Then it pushes the produced artifacts to the staging repository in Artifactory along with all build information by using the PromoteBuild native step.</description>
     </item>
     
     <item>
