@@ -4,7 +4,7 @@ chapter: false
 weight: 70
 ---
 
-The **npm_build** pipeline builds our web application. This pipeline uses a [NpmBuild](https://www.jfrog.com/confluence/display/JFROG/NpmBuild) native Pipelines step build the user interface components. Then it uses a generic [Bash](https://www.jfrog.com/confluence/display/JFROG/Bash) step to package the components. Next, it uses [NpmBuild](https://www.jfrog.com/confluence/display/JFROG/NpmPublish) to publish the components. [DockerBuild](https://www.jfrog.com/confluence/display/JFROG/DockerBuild) and [DockerPush](https://www.jfrog.com/confluence/display/JFROG/DockerPush) native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the [XrayScan](https://www.jfrog.com/confluence/display/JFROG/XrayScan) native step. Then it pushes the produced artifacts to the staging repository in Artifactory along with all build information by using the [PromoteBuild](https://www.jfrog.com/confluence/display/JFROG/PromoteBuild) native step.
+The **npm_build** pipeline builds our web application. This pipeline uses a [NpmBuild](https://www.jfrog.com/confluence/display/JFROG/NpmBuild) native Pipelines step build the user interface components. Next, it uses [NpmPublish](https://www.jfrog.com/confluence/display/JFROG/NpmPublish) to publish the components. [DockerBuild](https://www.jfrog.com/confluence/display/JFROG/DockerBuild) and [DockerPush](https://www.jfrog.com/confluence/display/JFROG/DockerPush) native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the [XrayScan](https://www.jfrog.com/confluence/display/JFROG/XrayScan) native step. Then it pushes the produced artifacts to the staging repository in Artifactory along with all build information by using the [PromoteBuild](https://www.jfrog.com/confluence/display/JFROG/PromoteBuild) native step.
 
 ![Npm Build Steps](/images/npm-build-pipeline-steps.svg) 
 
@@ -22,7 +22,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
 2. Click on the **npm_build** pipeline in the **Pipelines List**.
 3. Click on the **View YAML** icon to the right to view the pipeline steps discussed above.
 ![NPM Build YAML](/images/npm-build-yaml.png)
-4. Click on the **Resources** tab to view the details for all the resources that are used in our pipeline.
+4. Click on the **Resources** tab to view the details for all the resources that are used in our pipeline. We specify the relevant input and output resources such as Git repositories, build infos and file specs. These are referenced in our pipeline.
 5. Click on the **Pipeline** tab.
 6. The first step _npm\_prep_ is an NpmBuild step. This prepares the NPM environment for building. Additionally, the following occurs:
  - The NPM repository is specified with _repositoryName_. 
@@ -41,31 +41,6 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
             - name: gitRepo_code
 ```
 
-7. Next, we have a [Bash](https://www.jfrog.com/confluence/display/JFROG/Bash) step, _npm\_compile_. [Bash](https://www.jfrog.com/confluence/display/JFROG/Bash)  steps are very powerful, because they allow you to execute practically any commands. The purpose of this step is to compile our NPM package. In this step, we do the following in _onStart_:
-
-     - _onStart_ is used to execute bash commands prior to executing the step. Steps have additional [lifecycle callbacks](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Steps#PipelinesSteps-StepExecution): _onExecute_, _onSuccess_, _onFailure_ and _onComplete_.
-    - [restore_run_files](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions#PipelinesUtilityFunctions-restore_run_files) is a [Pipeline Utility Function](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions) copies the current run state or context to a location to compile.
-    - _npm install_ installs our packages.
-    - [add_run_files](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions#PipelinesUtilityFunctions-add_run_files) adds our temporary state or context back to the initial run state.
-
-```
-  - name: npm_compile
-        type: Bash
-    configuration:
-      inputSteps:
-        - name: npm_prep
-      integrations:
-        - name: Artifactory
-    execution:
-      onStart:
-        - export tempStateLocation="$step_tmp_dir/npmSourceState"
-        - restore_run_files npmBuildInputGitRepo $tempStateLocation
-        - pushd $tempStateLocation/workshop-app
-        - npm install
-        - add_run_files $tempStateLocation/. npmBuildInputGitRepo
-        - popd
-```
-
 8. The next step, _npm\_publish_, uses [NpmPublish](https://www.jfrog.com/confluence/display/JFROG/NpmPublish) to publish a package to the Artifactory repository _npm-demo_.
 
 ```
@@ -77,15 +52,14 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
         - name: Artifactory
       inputSteps:
         - name: npm_compile
-    execution:
-      onStart:
-        - export inputNpmBuildStepName="npm_prep"
 ```
 
-9. The second step, _npm\_docker\_build_, executes a docker build. It does the following: 
+9. The _npm\_docker\_build_ step executes a docker build. It does the following: 
+    - _onStart_ is used to execute bash commands prior to executing the step. Steps have additional [lifecycle callbacks](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Steps#PipelinesSteps-StepExecution): _onExecute_, _onSuccess_, _onFailure_ and _onComplete_.
     - It will use the Docker file from the relevant location to generate the Docker image with a specific name and tag based on the value of the environment variables that were configured in the _onStart_.
     - It will use the _gitRepo\_code_ GitRepo resource as an input resource to locate the Dockerfile.
     - It will use the BuildInfo input resource from the previous step.
+    - It will create a docker image ${domain}/docker-demo/npm-app.
 
 ```
       - name: npm_docker_build
@@ -132,7 +106,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
             - name: docker_npmBuild_Info
 ```
 
-11. The following step scan the docker image produced in the preceding step using Xray for security vulnerabilities and license compliance. By default, a failed Xray scan will result in a failure of the step and the pipeline.
+11. The following step uses Xray to scan the docker image for security vulnerabilities and license compliance. By default, a failed Xray scan will result in a failure of the step and the pipeline.
 
 ```
       - name: npm_docker_scan
@@ -145,7 +119,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
             - name: scanned_npm_dockerBuild_Info
 ```
 
-12. The last step will promote the build after passing the previous Xray scan.
+12. The last step will promote the build to the "staging" repository after passing the previous Xray scan.
 
 ```
       - name: npm_docker_promote
@@ -166,14 +140,23 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
 13. Close the **VIEW YAML** window.
 14. Click on the first step and further click on the trigger step icon to execute this pipeline. It will take several minutes for this pipeline to run (~10 minutes).
 ![Trigger Npm Pipeline](/images/TriggerNpmPipeline.png)
-15. When the run is finished successfully, switch to the Builds view in Artifactory. Go to **Artifactory** ► **Builds**.
-16. Click on **npm_build** in the list.
-17. Then click on your most recent build.
-![Npm Build Build](/images/npm-build-build.png)
-18. In the **Published Modules** tab, view the set of artifacts and dependencies for your build.
-![Npm Build Published Modules](/images/npm-build-published-modules.png)
+15. When the run is finished successfully, switch to the Packages view in Artifactory. Go to **Artifactory** ► **Packages**.
+16. Type _npm-app_ and search for the docker image that you just built.
+17. Then click on your docker _npm-app_ listing.
+![Npm App Package](/images/npm-app-package.png)
+18. This will show a list of the docker images for this build. Click on the latest version that you just built.
+![Npm Build Published Modules](/images/npm-app-versions.png)
 19. In the **Xray Data** tab, view the security and license violations.
 ![Npm Build Xray Data](/images/npm-build-xray-data.png)
+20. Click on any violation to see the details and impact in the **Issue Details** tab.
+![Npm Build Xray Data](/images/npm-build-xray-detail.png)
+21. Close the **Issue Details** tab.
+22. View the Docker configuration for the image in the **Docker Layers** tab.
+23. On the Builds tab, click on _npm\_build_ in the list.
+![Npm Build List](/images/npm-build-list.png)
+24. Then click on your most recent build.
+25. In the **Published Modules** tab, view the set of artifacts and dependencies for your build.
+![Npm Published Modules](/images/npm-published-modules.png)
 
 
-The **npm_build** pipeline provided an overview of a typical build, docker build and push, security scan and promotion process using Artifactory, Pipelines and Xray. You were able to execute a pipeline, monitor the progress and examine its results. You explored new steps for NPM and learned how to use the flexible Bash step.
+The **npm_build** pipeline provided an overview of a typical build, docker build and push, security scan and promotion process using Artifactory, Pipelines and Xray. You were able to execute a pipeline, monitor the progress and examine its results. You explored new steps for NPM.

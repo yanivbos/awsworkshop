@@ -3,7 +3,7 @@
    "repo":  {
    "include-patterns": ["**"],
    "exclude-patterns": [],
-   "repositories": ["docker-demo-prod-local","npm-demo-prod-local","gradle-demo-prod-local"],
+   "repositories": ["docker-demo-prod-local","npm-demo-prod-local"],
    "actions": {
      "groups": {
          "demo-readers" : ["read"] 
