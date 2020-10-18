@@ -1,7 +1,0 @@
-  { 
-     "packageType" : "gradle", 
-     "rclass"  : "local", 
-     "xrayIndex":"true",
-     "description" : "gradle repository for demo" , 
-     "key" : "gradle-demo-qa-local"
-   } 

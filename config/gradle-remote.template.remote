@@ -1,8 +1,0 @@
-{
-  "key": "gradle-remote",
-  "rclass" : "remote",
-  "packageType": "gradle",
-  "xrayIndex": "true",
-  "url" : "https://jcenter.bintray.com",
-  "externalDependenciesEnabled": "false"
-}
