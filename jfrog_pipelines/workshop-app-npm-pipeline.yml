@@ -42,7 +42,7 @@ pipelines:
           integrations:
             - name: Artifactory
           inputSteps:
-            - name: npm_compile
+            - name: npm_prep
 
       - name: npm_docker_build
         type: DockerBuild
