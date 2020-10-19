@@ -74,4 +74,4 @@ arn:aws:secretsmanager:<region>:<aws_account_id>: secret:secret_name
 15. Click through the next steps and then create the role with the name _ecsWorkshop_.
 ![IAM Role](/images/iam-role.png)
 
-You have now created an IAM role that will allow ECS images from Artifactory.
+You have now created an IAM role that will allow ECS to deploy images from Artifactory.

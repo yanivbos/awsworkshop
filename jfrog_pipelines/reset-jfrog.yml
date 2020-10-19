@@ -1,7 +1,7 @@
 pipelines:
-  - name: destroy_environment
+  - name: reset_jfrog
     steps:
-    - name: delete_scaffholding
+    - name: delete_scaffolding
       type: Bash
       configuration:
        inputResources:

@@ -62,9 +62,9 @@ resources:
 
       
 pipelines:
-  - name: init_environment
+  - name: init_jfrog
     steps:
-    - name: create_scaffholding
+    - name: create_scaffolding
       type: Bash
       configuration:
        inputResources:
