@@ -31,6 +31,10 @@
   </url>
   
   <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/10_cloud9.html</loc>
+  </url>
+  
+  <url>
     <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/10_configure_github_integration.html</loc>
   </url>
   
@@ -43,7 +47,19 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/10_cloud9.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/20_configure_artifactory_integration.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/10_devops_cloud/20_dev_sec_ops.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/20_jfrog_platform_overview.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/30_configure_initialization_pipeline.html</loc>
   </url>
   
   <url>
@@ -55,39 +71,19 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/45_cloud.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/20_configure_artifactory_integration.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/10_devops_cloud/20_dev_sec_ops.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/55_jfrog_free.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/20_jfrog_platform_overview.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/25_configure_ecs.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/30_configure_initialization_pipeline.html</loc>
-  </url>
-  
-  <url>
     <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/40_configure_pipeline_source.html</loc>
   </url>
   
   <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/45_cloud.html</loc>
+  </url>
+  
+  <url>
     <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/50_execute_initialization_pipeline.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/55_workshop_setup/55_jfrog_free.html</loc>
   </url>
   
   <url>
@@ -103,7 +99,15 @@
   </url>
   
   <url>
-    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/90_conclusion.html</loc>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/80_configure_ecs_permissions.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/90_deploy_your_image.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/100_conclusion.html</loc>
   </url>
   
   <url>

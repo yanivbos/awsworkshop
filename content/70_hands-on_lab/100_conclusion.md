@@ -1,7 +1,7 @@
 ---
 title: "Conclusion"
 chapter: false
-weight: 90
+weight: 100
 ---
 
 In this workshop, we demonstrated using the JFrog Platform to create CI/CD pipelines to build an application, manage the artifacts, scan the artifacts for security vulnerabilities and license compliance, and publish the artifacts to a staging repository.

@@ -4,7 +4,7 @@ chapter: false
 weight: 70
 ---
 
-The **npm_build** pipeline builds our web application. This pipeline uses a [NpmBuild](https://www.jfrog.com/confluence/display/JFROG/NpmBuild) native Pipelines step build the user interface components. Next, it uses [NpmPublish](https://www.jfrog.com/confluence/display/JFROG/NpmPublish) to publish the components. [DockerBuild](https://www.jfrog.com/confluence/display/JFROG/DockerBuild) and [DockerPush](https://www.jfrog.com/confluence/display/JFROG/DockerPush) native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the [XrayScan](https://www.jfrog.com/confluence/display/JFROG/XrayScan) native step. Then it pushes the produced artifacts to the staging repository in Artifactory along with all build information by using the [PromoteBuild](https://www.jfrog.com/confluence/display/JFROG/PromoteBuild) native step.
+The **npm_build** pipeline builds our web application. This pipeline uses a [NpmBuild](https://www.jfrog.com/confluence/display/JFROG/NpmBuild) native Pipelines step build the user interface components. Next, it uses [NpmPublish](https://www.jfrog.com/confluence/display/JFROG/NpmPublish) to publish the components. [DockerBuild](https://www.jfrog.com/confluence/display/JFROG/DockerBuild) and [DockerPush](https://www.jfrog.com/confluence/display/JFROG/DockerPush) native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the [XrayScan](https://www.jfrog.com/confluence/display/JFROG/XrayScan) native step. Then it pushes the produced artifacts to the "staging" repository in Artifactory along with all build information by using the [PromoteBuild](https://www.jfrog.com/confluence/display/JFROG/PromoteBuild) native step.
 
 ![Npm Build Steps](/images/npm-build-pipeline-steps.svg) 
 
@@ -59,7 +59,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
     - It will use the Docker file from the relevant location to generate the Docker image with a specific name and tag based on the value of the environment variables that were configured in the _onStart_.
     - It will use the _gitRepo\_code_ GitRepo resource as an input resource to locate the Dockerfile.
     - It will use the BuildInfo input resource from the previous step.
-    - It will create a docker image ${domain}/docker-demo/npm-app.
+    - It will create a docker image ${domain}/docker-demo/npm-app. _domain_ is the JFrog Platform instance domain (_server_.jfrog.io).
 
 ```
       - name: npm_docker_build
@@ -146,13 +146,13 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
 ![Npm App Package](/images/npm-app-package.png)
 18. This will show a list of the docker images for this build. Click on the latest version that you just built.
 ![Npm Build Published Modules](/images/npm-app-versions.png)
-19. In the **Xray Data** tab, view the security and license violations.
+19. In the **Xray Data** tab, view the security violations.
 ![Npm Build Xray Data](/images/npm-build-xray-data.png)
 20. Click on any violation to see the details and impact in the **Issue Details** tab.
 ![Npm Build Xray Data](/images/npm-build-xray-detail.png)
 21. Close the **Issue Details** tab.
 22. View the Docker configuration for the image in the **Docker Layers** tab.
-23. On the Builds tab, click on _npm\_build_ in the list.
+23. On the **Builds** tab, click on _npm\_build_ in the list.
 ![Npm Build List](/images/npm-build-list.png)
 24. Then click on your most recent build.
 25. In the **Published Modules** tab, view the set of artifacts and dependencies for your build.
@@ -160,3 +160,5 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
 
 
 The **npm_build** pipeline provided an overview of a typical build, docker build and push, security scan and promotion process using Artifactory, Pipelines and Xray. You were able to execute a pipeline, monitor the progress and examine its results. You explored new steps for NPM.
+
+Next, we will deploy your docker image from the "staging" repository using ECS.

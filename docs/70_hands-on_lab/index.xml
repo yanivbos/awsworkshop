@@ -38,16 +38,6 @@ Artifactory offers a universal solution supporting all major package formats inc
     </item>
     
     <item>
-      <title>Configure ECS</title>
-      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/25_configure_ecs.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/25_configure_ecs.html</guid>
-      <description>In the previous section, we set up JFrog Pipelines to authenticate and publish images to Artifactory. In this section, we will add the same credentials to AWS Secrets Manager and create an ECS IAM role. This will allow Amazon ECS to pull the image from Artifactory and deploy it.
-Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition.</description>
-    </item>
-    
-    <item>
       <title>Configure the Initialization Pipeline</title>
       <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/30_configure_initialization_pipeline.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -83,15 +73,35 @@ This pipeline initializes the JFrog Platform for the next build pipelines by cre
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/70_execute_npm_build_pipeline.html</guid>
-      <description>The npm_build pipeline builds our web application. This pipeline uses a NpmBuild native Pipelines step build the user interface components. Next, it uses NpmPublish to publish the components. DockerBuild and DockerPush native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the XrayScan native step. Then it pushes the produced artifacts to the staging repository in Artifactory along with all build information by using the PromoteBuild native step.</description>
+      <description>The npm_build pipeline builds our web application. This pipeline uses a NpmBuild native Pipelines step build the user interface components. Next, it uses NpmPublish to publish the components. DockerBuild and DockerPush native steps are used to build a Docker image and push it to Artifactory. It then scans the build using the XrayScan native step. Then it pushes the produced artifacts to the &amp;ldquo;staging&amp;rdquo; repository in Artifactory along with all build information by using the PromoteBuild native step.</description>
+    </item>
+    
+    <item>
+      <title>Configure ECS Permissions</title>
+      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/80_configure_ecs_permissions.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/80_configure_ecs_permissions.html</guid>
+      <description>In the previous section, we set up JFrog Pipelines to authenticate and publish images to Artifactory. In this section, we will add the same credentials to AWS Secrets Manager and create an ECS IAM role. This will allow Amazon ECS to pull the image from Artifactory and deploy it.
+Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Your Image with ECS</title>
+      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/90_deploy_your_image.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/90_deploy_your_image.html</guid>
+      <description>We are now ready to deploy your image with Amazon ECS.
+Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition. This allows your ECS tasks to use images from private repositories.   Go to the Amazon ECS console first-run wizard. In the Container definition section, click configure on the custom option. For the container name, specify npm-app.</description>
     </item>
     
     <item>
       <title>Conclusion</title>
-      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/90_conclusion.html</link>
+      <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/100_conclusion.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/90_conclusion.html</guid>
+      <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/100_conclusion.html</guid>
       <description>In this workshop, we demonstrated using the JFrog Platform to create CI/CD pipelines to build an application, manage the artifacts, scan the artifacts for security vulnerabilities and license compliance, and publish the artifacts to a staging repository. Now you have some basic understanding of the JFrog Platform, we encourage you to use it with your existing build tools, like Maven, Gradle, Ivy and Ant and work with packaging systems of other development platforms, like NuGet, RubyGems or NPM.</description>
     </item>
     

@@ -26,3 +26,4 @@ as an IAM user with administrator access to the AWS account:
 
 1. Take note of the login URL and save:
 ![Login URL](/images/iam-4-save-url.png)
+

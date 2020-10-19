@@ -4,7 +4,7 @@ pipelines:
     configuration:
       environmentVariables:
         readOnly:
-          Version: 1.2.$run_number
+          Version: latest
     steps:
       - name: npm_prep
         type: NpmBuild

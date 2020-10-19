@@ -1,7 +1,7 @@
 ---
-title: "Configure ECS"
+title: "Configure ECS Permissions"
 chapter: false
-weight: 25
+weight: 80
 ---
 In the previous section, we set up JFrog Pipelines to authenticate and publish images to Artifactory. In this section, we will add the same credentials to AWS Secrets Manager and create an ECS IAM role. This will allow Amazon ECS to pull the image from Artifactory and deploy it. 
 

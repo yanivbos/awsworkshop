@@ -1,14 +1,14 @@
 ﻿---
 title: "Cloud9"
 chapter: false
-weight: 12
+weight: 10
 ---
 
-[AWS Cloud9](https://aws.amazon.com/cloud9/) is a cloud-based integrated development environment (IDE) that Let’s you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects.
+[AWS Cloud9](https://aws.amazon.com/cloud9/) is a cloud-based integrated development environment (IDE) that lets you write, run, and debug your code with just a browser. It includes a code editor, debugger, and terminal. Cloud9 comes prepackaged with essential tools for popular programming languages, including JavaScript, Python, PHP, and more, so you don’t need to install files or configure your development machine to start new projects.
 
 ### Add a new Cloud9 IDE environment
 
-1 . Within the AWS console, use the region drop list to select **us-west-2 (Oregon)**.  We are doing this because the workshop script will provsion the resources in this same region.
+1 . Within the AWS console, use the region drop list to select **us-west-2 (Oregon)**.  We are doing this because the workshop script will provision the resources in this same region.
 
 ![image](/images/aws-pick-region.png)
 
