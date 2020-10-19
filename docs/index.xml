@@ -183,13 +183,13 @@ Private registry authentication for ECS tasks using AWS Secrets Manager enables 
     </item>
     
     <item>
-      <title>Deploy Your Image with ECS</title>
+      <title>Deploy Your NPM Image with ECS</title>
       <link>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/90_deploy_your_image.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/90_deploy_your_image.html</guid>
       <description>We are now ready to deploy your image with Amazon ECS.
-Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition. This allows your ECS tasks to use images from private repositories.   Go to the Amazon ECS console first-run wizard. In the Container definition section, click configure on the custom option. For the container name, specify npm-app.</description>
+Private registry authentication for ECS tasks using AWS Secrets Manager enables you to store your credentials securely and then reference them in your container definition. This allows your ECS tasks to use images from private repositories.   Go to the Amazon ECS console first-run wizard. In the Container definition section, click Configure on the custom option. For the container name, specify npm-app.</description>
     </item>
     
     <item>
@@ -198,7 +198,7 @@ Private registry authentication for ECS tasks using AWS Secrets Manager enables 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/100_conclusion.html</guid>
-      <description>In this workshop, we demonstrated using the JFrog Platform to create CI/CD pipelines to build an application, manage the artifacts, scan the artifacts for security vulnerabilities and license compliance, and publish the artifacts to a staging repository. Now you have some basic understanding of the JFrog Platform, we encourage you to use it with your existing build tools, like Maven, Gradle, Ivy and Ant and work with packaging systems of other development platforms, like NuGet, RubyGems or NPM.</description>
+      <description>In this workshop, we demonstrated that using the JFrog Platform to create CI/CD pipelines to build an application, manage the artifacts, scan the artifacts for security vulnerabilities and license compliance, and publish the artifacts of your application to a staging repository. Then you used Amazon ECS to deploy your application so that end-users can access it. Now you have a basic understanding of the JFrog Platform as a modern DevOps cloud platform on AWS.</description>
     </item>
     
   </channel>

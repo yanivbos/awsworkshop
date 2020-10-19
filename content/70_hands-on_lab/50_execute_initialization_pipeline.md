@@ -12,14 +12,14 @@ This pipeline initializes the JFrog Platform for the next build pipelines by cre
 {{% /notice %}}
 
 1. Go to **Pipelines** ► **My Pipelines**.
-![My Pipelines](/images/MyPipelinesFinal.png)
-2. Click on the **init_environment** pipeline in the **Pipelines List**.
+![My Pipelines](/images/pipelines-list.png)
+2. Click on the **init_jfrog** pipeline in the **Pipelines List**.
 3. Click on the first step and further click on the trigger step icon to execute this pipeline. A run will appear, and it will take a few moments for JFrog Pipelines to allocate resources to execute the pipeline. The pipeline will take approximately 5 minutes to execute.
-![Trigger Init Pipeline](/images/TriggerInitPipeline.png)
+![Trigger Init Pipeline](/images/trigger-init-jfrog.png)
 4. If the execution results in an error, click on the run to view the logs. Make any changes to the pipeline or integrations to correct any issues and then execute again.
-![Run Error](/images/RunError.png)
+![Run Error](/images/run-error.png)
 5. The run will show a success status when it completes without errors.
-![Run Success](/images/RunSuccess.png)
+![Run Success](/images/run-success.png)
 
 We are now ready to build our first artifacts for our application.
 

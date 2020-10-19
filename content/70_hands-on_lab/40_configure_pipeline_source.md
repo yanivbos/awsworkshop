@@ -13,7 +13,7 @@ A Pipeline Source represents a source control repository (such as GitHub or BitB
 {{% /notice %}}
 
 1. In your JFrog Platform instance, go to **Pipelines** ► **Pipeline Sources**.
-![Pipeline Sources](/images/PipelineSources.png)
+![Pipeline Sources](/images/pipeline-sources.png)
 2. Click on **Add Pipeline Source**.
 3. Choose **Single Branch**. This is for repositories that only have one branch like _master_.
 4. For the **Integration** choose the GitHub Integration that you created previously named _GitHub_.
@@ -21,14 +21,14 @@ A Pipeline Source represents a source control repository (such as GitHub or BitB
 6. Leave the **Branch** as _master_.
 7. For the **Pipeline Config Filter**, specify jfrog_pipelines/.*yml.
 8. Click **Create**.
-![PipelineSource](/images/AddPipelineSource.png)
+![PipelineSource](/images/add-pipeline-source.png)
 
 It will take a few moments for JFrog Pipelines to sync the pipelines from your new Pipelines Source. During this time, JFrog Pipelines will load and process the pipelines for syntax, resources and dependencies. When complete, you should see a _Success_ status. 
-![Pipelines Source Success](/images/PipelinesSourceSuccess.png)
+![Pipelines Source Success](/images/pipeline-source-success.png)
 9. Click on **Logs** on the right to view more details on the sync process.
-![Pipelines Logs](/images/PipelinesLog.png)
+![Pipelines Logs](/images/pipeline-log.png)
 10. Go back to **Pipelines** ► **My Pipelines**, and you will see your added pipelines.
-![My Pipelines](/images/MyPipelinesFinal.png)
+![My Pipelines](/images/pipelines-list.png)
 
 With your pipelines added, we are now ready to execute the pipelines, initialize our environment and build our artifacts!
 

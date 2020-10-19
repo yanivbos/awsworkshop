@@ -26,16 +26,16 @@ JFrog Pipelines can also integrate with other source code repositories such as G
 6. Copy the token.
 7. Go to your JFrog Platform instance at _https://[server name].jfrog.io_. Refer to your _JFrog Free Subscription Activation_ email if needed.
 8. Login to your JFrog Platform instance with your credentials.
-![Login](/images/Login.png)
+![Login](/images/login.png)
 9. Once logged into the environment, you will be presented with the landing page.
-![Landing](/images/Landing.png)
+![Landing](/images/landing.png)
 10. On the left sidebar menu, select **Pipelines** ► **Integrations**.
-![Pipelines](/images/Integrations.png)
+![Pipelines](/images/pipeline-integrations.png)
 10. Click on **Add an Integration**.
 11. Give this integration the name _GitHub_.
 12. For the **Integration Type**, choose **GitHub**.
 13. Paste your GitHub Personal Access Token into the **Token** field.
-![GitHub Integration](/images/AddGitHubIntegration.png)
+![GitHub Integration](/images/add-github-integration.png)
 14. Click **Create**.
 
 You have created a GitHub Integration that allows JFrog Pipelines to access your GitHub repositories.

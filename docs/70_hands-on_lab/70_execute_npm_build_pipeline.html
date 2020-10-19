@@ -12,21 +12,21 @@
     <title>Execute the NPM Build Pipeline :: JFrog Workshop</title>
 
     
-    <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1603074774" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/fontawesome-all.min.css?1603074774" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/hybrid.css?1603074774" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/featherlight.min.css?1603074774" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/perfect-scrollbar.min.css?1603074774" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/auto-complete.css?1603074774" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/atom-one-dark-reasonable.css?1603074774" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/theme.css?1603074774" rel="stylesheet">
-    <link href="https://jefferyfry.github.io/awsworkshop/css/hugo-theme.css?1603074774" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/nucleus.css?1603128993" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/fontawesome-all.min.css?1603128993" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/hybrid.css?1603128993" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/featherlight.min.css?1603128993" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/perfect-scrollbar.min.css?1603128993" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/auto-complete.css?1603128993" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/atom-one-dark-reasonable.css?1603128993" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/theme.css?1603128993" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/hugo-theme.css?1603128993" rel="stylesheet">
     
-    <link href="https://jefferyfry.github.io/awsworkshop/css/theme-mine.css?1603074774" rel="stylesheet">
+    <link href="https://jefferyfry.github.io/awsworkshop/css/theme-mine.css?1603128993" rel="stylesheet">
     
     
 
-    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery-3.3.1.min.js?1603074774"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery-3.3.1.min.js?1603128993"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -53,14 +53,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/lunr.min.js?1603074774"></script>
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/auto-complete.js?1603074774"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/lunr.min.js?1603128993"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/auto-complete.js?1603128993"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/jefferyfry.github.io\/awsworkshop\/";
     
 </script>
-<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/search.js?1603074774"></script>
+<script type="text/javascript" src="https://jefferyfry.github.io/awsworkshop/js/search.js?1603128993"></script>
 
     
   </div>
@@ -651,9 +651,9 @@
  
   
     
-      <li data-nav-id="/70_hands-on_lab/90_deploy_your_image.html" title="Deploy Your Image with ECS" class="dd-item ">
+      <li data-nav-id="/70_hands-on_lab/90_deploy_your_image.html" title="Deploy Your NPM Image with ECS" class="dd-item ">
         <a href="https://jefferyfry.github.io/awsworkshop/70_hands-on_lab/90_deploy_your_image.html">
-        Deploy Your Image with ECS
+        Deploy Your NPM Image with ECS
         <i class="fas fa-check read-icon"></i>
         </a>
     </li>
@@ -832,7 +832,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
 
 <ol>
 <li>Go to <strong>Pipelines</strong> ► <strong>My Pipelines</strong>.
-<img src="https://jefferyfry.github.io/awsworkshop/images/MyPipelinesFinal.png" alt="My Pipelines" /></li>
+<img src="https://jefferyfry.github.io/awsworkshop/images/pipelines-list.png" alt="My Pipelines" /></li>
 <li>Click on the <strong>npm_build</strong> pipeline in the <strong>Pipelines List</strong>.</li>
 <li>Click on the <strong>View YAML</strong> icon to the right to view the pipeline steps discussed above.
 <img src="https://jefferyfry.github.io/awsworkshop/images/npm-build-yaml.png" alt="NPM Build YAML" /></li>
@@ -875,7 +875,7 @@ configuration:
 <li>It will use the <em>gitRepo_code</em> GitRepo resource as an input resource to locate the Dockerfile.</li>
 <li>It will use the BuildInfo input resource from the previous step.</li>
 
-<li><p>It will create a docker image ${domain}/docker-demo/npm-app. <em>domain</em> is the JFrog Platform instance domain (<em>server</em>.jfrog.io).</p>
+<li><p>It will create a docker image ${domain}/docker-demo/npm-app. <em>domain</em> is the JFrog Platform instance domain (&lt;server&gt;.jfrog.io).</p>
 <pre><code>- name: npm_docker_build
 type: DockerBuild
 configuration:
@@ -943,17 +943,17 @@ execution:
 
 <li><p>Close the <strong>VIEW YAML</strong> window.</p></li>
 
-<li><p>Click on the first step and further click on the trigger step icon to execute this pipeline. It will take several minutes for this pipeline to run (~10 minutes).
-<img src="https://jefferyfry.github.io/awsworkshop/images/TriggerNpmPipeline.png" alt="Trigger Npm Pipeline" /></p></li>
+<li><p>Click on the first step and further click on the trigger step icon to execute this pipeline. It will take several minutes for this pipeline to run (~15-20 minutes).
+<img src="https://jefferyfry.github.io/awsworkshop/images/trigger-npm-pipeline.png" alt="Trigger Npm Pipeline" /></p></li>
 
-<li><p>When the run is finished successfully, switch to the Packages view in Artifactory. Go to <strong>Artifactory</strong> ► <strong>Packages</strong>.</p></li>
+<li><p>When the run finishes successfully, switch to the <strong>Packages</strong> view in Artifactory. Go to <strong>Artifactory</strong> ► <strong>Packages</strong>.</p></li>
 
 <li><p>Type <em>npm-app</em> and search for the docker image that you just built.</p></li>
 
 <li><p>Then click on your docker <em>npm-app</em> listing.
 <img src="https://jefferyfry.github.io/awsworkshop/images/npm-app-package.png" alt="Npm App Package" /></p></li>
 
-<li><p>This will show a list of the docker images for this build. Click on the latest version that you just built.
+<li><p>This will show a list of the docker images for this build. Click on the <em>latest</em> version that you just built.
 <img src="https://jefferyfry.github.io/awsworkshop/images/npm-app-versions.png" alt="Npm Build Published Modules" /></p></li>
 
 <li><p>In the <strong>Xray Data</strong> tab, view the security violations.
@@ -1473,19 +1473,19 @@ execution:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/clipboard.min.js?1603074774"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.min.js?1603074774"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.jquery.min.js?1603074774"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery.sticky.js?1603074774"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/featherlight.min.js?1603074774"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/highlight.pack.js?1603074774"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/clipboard.min.js?1603128993"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.min.js?1603128993"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/perfect-scrollbar.jquery.min.js?1603128993"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/jquery.sticky.js?1603128993"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/featherlight.min.js?1603128993"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/highlight.pack.js?1603128993"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/modernizr.custom-3.6.0.js?1603074774"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/learn.js?1603074774"></script>
-    <script src="https://jefferyfry.github.io/awsworkshop/js/hugo-learn.js?1603074774"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/modernizr.custom-3.6.0.js?1603128993"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/learn.js?1603128993"></script>
+    <script src="https://jefferyfry.github.io/awsworkshop/js/hugo-learn.js?1603128993"></script>
     
         
-            <script src="https://jefferyfry.github.io/awsworkshop/mermaid/mermaid.js?1603074774"></script>
+            <script src="https://jefferyfry.github.io/awsworkshop/mermaid/mermaid.js?1603128993"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });

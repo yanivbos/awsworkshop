@@ -33,7 +33,7 @@ Private registry authentication for ECS tasks using AWS Secrets Manager enables 
 11. Click on your new secret.
 12. Copy the **Secret ARN**.
 ![Secret ARN](/images/secret-arn.png)
-13. Next we must create an IAM role that allows ECS to access these credentials. Go to [IAM Roles](https://us-east-1.console.aws.amazon.com/iam/home?#/roles).
+13. Next, we must create an IAM role that allows ECS to access these credentials. Go to [IAM Roles](https://us-east-1.console.aws.amazon.com/iam/home?#/roles).
 14. Click on **Create role**.
 15. Select the **Elastic Container Service** service and **Elastic Container Service Task** use case.
 16. Click on **Create Policy**.
@@ -67,11 +67,11 @@ arn:aws:secretsmanager:<region>:<aws_account_id>: secret:secret_name
 ```
 
 20. Click on **Review policy**.
-21. Name the policy _ecsAccessToSecrets_ and create the policy.
+21. Name the policy _ecsAccessToSecrets_ and create the policy. This creates a policy that allows ECS to access your Artifactory credentials that are stored in the Secrets Manager.
 ![Inline Policy](/images/inline-policy.png)
 22. Now go back to your role and search for your new policy _ecsAccessToSecrets_ and attach it. You may need to refresh the policy list. 
-23. Also attach the **AmazonECSTaskExecutionRolePolicy**.
-15. Click through the next steps and then create the role with the name _ecsWorkshop_.
+23. Also attach the **AmazonECSTaskExecutionRolePolicy**. This policy allows the execution of Amazon ECS tasks.
+24. Click through the next steps and then create the role with the name _ecsWorkshop_.
 ![IAM Role](/images/iam-role.png)
 
 You have now created an IAM role that will allow ECS to deploy images from Artifactory.

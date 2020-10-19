@@ -18,7 +18,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
 {{% /notice %}}
 
 1. Go to **Pipelines** ► **My Pipelines**.
-![My Pipelines](/images/MyPipelinesFinal.png)
+![My Pipelines](/images/pipelines-list.png)
 2. Click on the **npm_build** pipeline in the **Pipelines List**.
 3. Click on the **View YAML** icon to the right to view the pipeline steps discussed above.
 ![NPM Build YAML](/images/npm-build-yaml.png)
@@ -41,7 +41,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
             - name: gitRepo_code
 ```
 
-8. The next step, _npm\_publish_, uses [NpmPublish](https://www.jfrog.com/confluence/display/JFROG/NpmPublish) to publish a package to the Artifactory repository _npm-demo_.
+7. The next step, _npm\_publish_, uses [NpmPublish](https://www.jfrog.com/confluence/display/JFROG/NpmPublish) to publish a package to the Artifactory repository _npm-demo_.
 
 ```
     - name: npm_publish
@@ -54,12 +54,12 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
         - name: npm_compile
 ```
 
-9. The _npm\_docker\_build_ step executes a docker build. It does the following: 
+8. The _npm\_docker\_build_ step executes a docker build. It does the following: 
     - _onStart_ is used to execute bash commands prior to executing the step. Steps have additional [lifecycle callbacks](https://www.jfrog.com/confluence/display/JFROG/Pipelines+Steps#PipelinesSteps-StepExecution): _onExecute_, _onSuccess_, _onFailure_ and _onComplete_.
     - It will use the Docker file from the relevant location to generate the Docker image with a specific name and tag based on the value of the environment variables that were configured in the _onStart_.
     - It will use the _gitRepo\_code_ GitRepo resource as an input resource to locate the Dockerfile.
     - It will use the BuildInfo input resource from the previous step.
-    - It will create a docker image ${domain}/docker-demo/npm-app. _domain_ is the JFrog Platform instance domain (_server_.jfrog.io).
+    - It will create a docker image ${domain}/docker-demo/npm-app. _domain_ is the JFrog Platform instance domain (\<server\>.jfrog.io).
 
 ```
       - name: npm_docker_build
@@ -89,7 +89,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
 ```
 
 
-10. The next step will push the Docker image to the target Docker repository in Artifactory. 
+9. The next step will push the Docker image to the target Docker repository in Artifactory. 
 
 ```
       - name: Npm_docker_push
@@ -106,7 +106,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
             - name: docker_npmBuild_Info
 ```
 
-11. The following step uses Xray to scan the docker image for security vulnerabilities and license compliance. By default, a failed Xray scan will result in a failure of the step and the pipeline.
+10. The following step uses Xray to scan the docker image for security vulnerabilities and license compliance. By default, a failed Xray scan will result in a failure of the step and the pipeline.
 
 ```
       - name: npm_docker_scan
@@ -119,7 +119,7 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
             - name: scanned_npm_dockerBuild_Info
 ```
 
-12. The last step will promote the build to the "staging" repository after passing the previous Xray scan.
+11. The last step will promote the build to the "staging" repository after passing the previous Xray scan.
 
 ```
       - name: npm_docker_promote
@@ -137,25 +137,25 @@ Steps are executed on build nodes. Dynamic build node pools are spun up and down
             - name: final_docker_npmBuild_Info 
 ```
 
-13. Close the **VIEW YAML** window.
-14. Click on the first step and further click on the trigger step icon to execute this pipeline. It will take several minutes for this pipeline to run (~10 minutes).
-![Trigger Npm Pipeline](/images/TriggerNpmPipeline.png)
-15. When the run is finished successfully, switch to the Packages view in Artifactory. Go to **Artifactory** ► **Packages**.
-16. Type _npm-app_ and search for the docker image that you just built.
-17. Then click on your docker _npm-app_ listing.
+12. Close the **VIEW YAML** window.
+13. Click on the first step and further click on the trigger step icon to execute this pipeline. It will take several minutes for this pipeline to run (~15-20 minutes).
+![Trigger Npm Pipeline](/images/trigger-npm-pipeline.png)
+14. When the run finishes successfully, switch to the **Packages** view in Artifactory. Go to **Artifactory** ► **Packages**.
+15. Type _npm-app_ and search for the docker image that you just built.
+16. Then click on your docker _npm-app_ listing.
 ![Npm App Package](/images/npm-app-package.png)
-18. This will show a list of the docker images for this build. Click on the latest version that you just built.
+17. This will show a list of the docker images for this build. Click on the _latest_ version that you just built.
 ![Npm Build Published Modules](/images/npm-app-versions.png)
-19. In the **Xray Data** tab, view the security violations.
+18. In the **Xray Data** tab, view the security violations.
 ![Npm Build Xray Data](/images/npm-build-xray-data.png)
-20. Click on any violation to see the details and impact in the **Issue Details** tab.
+19. Click on any violation to see the details and impact in the **Issue Details** tab.
 ![Npm Build Xray Data](/images/npm-build-xray-detail.png)
-21. Close the **Issue Details** tab.
-22. View the Docker configuration for the image in the **Docker Layers** tab.
-23. On the **Builds** tab, click on _npm\_build_ in the list.
+20. Close the **Issue Details** tab.
+21. View the Docker configuration for the image in the **Docker Layers** tab.
+22. On the **Builds** tab, click on _npm\_build_ in the list.
 ![Npm Build List](/images/npm-build-list.png)
-24. Then click on your most recent build.
-25. In the **Published Modules** tab, view the set of artifacts and dependencies for your build.
+23. Then click on your most recent build.
+24. In the **Published Modules** tab, view the set of artifacts and dependencies for your build.
 ![Npm Published Modules](/images/npm-published-modules.png)
 
 
