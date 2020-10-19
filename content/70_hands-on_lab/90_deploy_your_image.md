@@ -12,68 +12,40 @@ Private registry authentication for ECS tasks using AWS Secrets Manager enables 
 {{% /notice %}}
 
 1. Go to the [Amazon ECS console first-run wizard](https://console.aws.amazon.com/ecs/home#/firstRun).
-2. In the **Container definition** section, click **configure** on the **custom** option.
+2. In the **Container definition** section, click **Configure** on the **custom** option.
 3. For the container name, specify _npm-app_.
 4. For the **Image** specify the docker image name for your npm-app. This should be ${domain}/docker-demo/npm-app:latest. _domain_ is the JFrog Platform instance domain (_server_.jfrog.io).
-3. Select **Other type of secrets**.
-4. Select the **Plaintext** format.
-5. And paste your Artifactory username and API Key.
+5. Check **Private repository autentication**.
+6. For **Secrets Manager ARN** paste the **Secrets ARN** from the [ECS permissions step](./80_configure_ecs_permissions.md).
+7. For port mapping, specify 443.
+8. Click **Update**.
+![ECS Container](/images/ecs-container.png)
+9. Click **Edit** on the **Task definition**.
+10. for the **Task definition name**, specify _deploy-npm-app_.
+11. For the **Task execution role** specify the ECS role that you created, _ecsWorkshop_.
+![ECS Task Definition](/images/ecs-task-definition.png)
+12. Click **Save**.
+13. Click **Next**.
+14. For **Define your service**, ensure **Application Load Balancer** is selected and port 444 is listed.
+![ECS Service](/images/ecs-service.png)
+15. Click **Next**.
+16. For **Configure your cluster**, specify _npm-app-cluster_ for your **Cluster name**.
+17. Click **Next**.
+18. Review your configuration.
+19. Click **Create** after you validated your configuration.
+20. Wait for your AWS services to be deployed.
+21. When ready, click on your deployed service.
+![NPM APP Service](/images/npm-app-service.png)
+22. Click on the **Tasks** tab.
+![NPM APP Service Tasks](/images/npm-app-service-tasks.png)
+23. Click on the _deploy-npm-app_ task.
+24. On the **Details** page of the task, locate the **Public IP**.
+![NPM APP Task Detail](/images/npm-app-service-task-detail.png)
+25. Click on the **ENI Id** network interface link.
 
-```
-{
-  "username" : "<username>",
-  "password" : "<password>"
-}
-```
+25. In your browser, go to https://<Public IP> to view your deployed web application. Click through the self-signed certificate warning.
 
-6. Click **Next**.
-7. Provide a **Secret name** like _awsworkshop/jfrog-npm-app_. Remember this name.
-8. Click **Next**.
-9. Leave the default settings on this next **Configure automatic rotation** page and click **Next**.
-10. On the **Sample code** page, click **Store**. You should now see your new secret listed.
-![AWS Secrets](/images/aws-secrets.png)
-11. Click on your new secret.
-12. Copy the **Secret ARN**.
-![Secret ARN](/images/secret-arn.png)
-13. Next we must create an IAM role that allows ECS to access these credentials. Go to [IAM Roles](https://us-east-1.console.aws.amazon.com/iam/home?#/roles).
-14. Click on **Create role**.
-15. Select the **Elastic Container Service** service and **Elastic Container Service Task** use case.
-16. Click on **Create Policy**.
-17. Click on the **JSON** tab and paste the following.
 
-```
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "kms:Decrypt",
-        "secretsmanager:GetSecretValue"
-      ],
-      "Resource": [
-        "<Secret ARN>",
-        "arn:aws:kms:<region>:<aws_account_id>:key/key_id"     
-      ]
-    }
-  ]
-}
 
-```
-
-18. Substitute your **Secret ARN** from above.
-19. Also substitute your \<region\> and \<aws_account_id\>. You can derive this from the **Secret ARN** format.
-
-```
-arn:aws:secretsmanager:<region>:<aws_account_id>: secret:secret_name
-```
-
-20. Click on **Review policy**.
-21. Name the policy _ecsAccessToSecrets_ and create the policy.
-![Inline Policy](/images/inline-policy.png)
-22. Now go back to your role and search for your new policy _ecsAccessToSecrets_ and attach it. You may need to refresh the policy list. 
-23. Also attach the **AmazonECSTaskExecutionRolePolicy**.
-15. Click through the next steps and then create the role with the name _ecsWorkshop_.
-![IAM Role](/images/iam-role.png)
 
 You have now created an IAM role that will allow ECS images from Artifactory.
