@@ -2,7 +2,7 @@ resources:
   - name: gitRepo_code
     type: GitRepo
     configuration:
-      path: jefferyfry/awsworkshop
+      path: yanivbos/awsworkshop
       gitProvider: GitHub
       branches:
         include: master
